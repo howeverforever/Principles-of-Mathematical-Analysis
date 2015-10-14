@@ -1,0 +1,49 @@
+% === Exercise 2.6 ===
+\begin{Exercise}
+\begin{itemize}
+\item $\mathbf{Prove\ E'\ is\ closed.}$
+\begin{proof}
+By definition, it suffice to prove $(E')' \subseteq E'$. 
+
+Let $x\in (E')'$ arbitrarily. Now fix $x$ and pick arbitrarily small radius $r$ such that $s := \frac{r}{2}$ and $t := \frac{r}{4}$.
+
+Since $x\in (E')'$, there is a point $y\in E'$ in the neighborhood $N_s(x)$. And since $y\in E'$, there is also a point $z\in E$ in the neighborhood $N_t(y)$. 
+
+Notice that $y\neq z$ by the choice of radius $s$ and $t$.
+
+Consider
+$$
+d(x,z)
+\leq d(x,y) + d(y,z)
+< s + t
+= \frac{r}{2} + \frac{r}{4}
+< r.
+$$
+Hence for arbitrary radius $r$, there is a point $z\in E$ in the neighborhood $N_r(x)$, then we see that $x\in E'$. Moreover, $x$ is arbitrary, we know $(E')' \subseteq E'$ ; hence we conclude $E'$ is closed.
+\end{proof}
+
+\item $\mathbf{Prove\ E\ and\ E'\ have\ the\ same\ limit\ points.}$
+
+\begin{proof}
+We will claim $(\overline{E})' \subseteq E'$ and $E' \subseteq (\overline{E})'$ to obtain $(\overline{E})' = E'$ which is asked to prove.
+
+Let $x\in (\overline{E})'$ and arbitrary radius $r > 0$, then there is a point $y\in \overline{E}$ in the neighborhood $N_r(x)$.
+
+Since $\overline{E} = E\cup E'$, then if $y\in E$, this makes $x\in E'$ hold trivially; otherwise, if $y\in E'$, then $x\in E'$ holds from the previous proof. Hence we know $(\overline{E})' \subseteq E'$.
+
+On the other hand, if $x\in E'$, then every neighborhood of $x$ contains an element of $E$. This implies every neighborhood of $x$ contains an element of $\overline{E}$ trivially. Hence we know $E' \subseteq (\overline{E})'$.
+
+Finally, we conclude $(\overline{E})' = E'$ which means $E$ and $E'$ have the same limit points.
+\end{proof}
+
+\item $\mathbf{Do\ E\ and\ E'\ always\ have\ the\ same\ limit\ points?}$
+\begin{solution}
+No.
+
+We give a counter-example.
+Let $E := \{0\} \cup \left\{ \frac{1}{n}:n\in\mathbb{N}\setminus\{1\} \right\}$, then $E' = \{0\}$ and $(E')' = \emptyset$. Hence $E' \neq (E')'$ which means $E$ and $E'$ don't have the same limit points.
+
+
+\end{solution}
+\end{itemize}
+\end{Exercise}
