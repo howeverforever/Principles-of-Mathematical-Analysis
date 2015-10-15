@@ -1,0 +1,33 @@
+% === Exercise 2.9 ===
+\begin{Exercise}
+\begin{enumerate}[a)]
+\item
+\begin{proof}
+Let $x\in E^{\circ}$ arbitrarily, then there is a neighborhood $N_r(x)\subset E$ with $r>0$.
+
+Let $y\in N_r(x)$ arbitrarily, then we have $d(x,y)<r$. Pick a radius $s=r-d(x,y)>0$. It follows that $N_s(y)\subset E$. 
+
+Let $z\in N_s(y)$ arbitrarily, since
+$$
+d(x,z) \leq d(x,y)+d(y,z) < d(x,y) + s = r,
+$$
+there is a neighborhood $N_s(y)\subset E$ with $s>0$. Because $z$ is arbitrary, then we have $y\in E^{\circ}$.
+
+Moreover, $y$ is arbitrary, then $N_r(x)\subset E^{\circ}$ which means $x\in (E^{\circ})^{\circ}$; also, by the choice of $x$ arbitrarily, hence $E^{\circ}$ is open.
+\end{proof}
+
+\item
+\begin{proof}
+$(\Longrightarrow)$
+Since $E$ is open, then every point of $E$ is an interior point of $E$; hence $E^{\circ} = E$.
+
+$(\Longleftarrow)$
+Since $E = E^{\circ}$, and we know $E^{\circ}$ is always open by the Exercise 2.9a, then $E$ is open.
+\end{proof}
+
+\item
+\begin{proof}
+Let $x\in G$ arbitrarily. Since $G$ is open, we know $x\in G^{\circ}$. Then there is a neighborhood $N_r(x)\subset G$ with $r>0$. Because $G\subset E$ by hypothesis, $N_r(x)\subset E$ which means $x\in E^{\circ}$. By the arbitrary choice of $x$, we conclude $G\subset E^{\circ}$.
+\end{proof}
+\end{enumerate}
+\end{Exercise}

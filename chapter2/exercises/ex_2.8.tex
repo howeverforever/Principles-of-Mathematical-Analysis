@@ -1,0 +1,26 @@
+% === Exercise 2.8 ===
+\begin{Exercise}
+\begin{itemize}
+\item $\mathbf{Is\ every\ point\ of\ every\ open\ set\ E \subset \mathbb{R}^2\ a\ limit\ point\ of\ E?}$
+
+Yes.
+\begin{proof}
+Let $x = (a, b)\in E$ arbitrarily. Since $E$ is open, then $x\in E^{\circ}$; hence there is a neighborhood $N_r(x)$ where $r>0$ such that $N_r(x)\subset E$.
+
+Fix $x$, consider the neighborhood $N_s(x)$ for any radius $s>0$. 
+
+We can pick $y = \left( a+\frac{1}{2}\min\{r,s\}, b \right)$, then $d(x,y) = \frac{1}{2}\min\{r,s\} < r$. This means there is a point $y\in N_r(x) \subset E$ in the neighborhood $N_s(x)$. So every neighborhood of $x$ contains a point $y\neq x$ such that $y\in E$; hence $x\in E'$.
+
+Because $x$ is arbitrary, we conclude $E \subseteq E'$ for any open set $E\subset \mathbb{R}^2$.
+\end{proof}
+
+\item $\mathbf{Is\ every\ point\ of\ every\ closed\ set\ E \subset \mathbb{R}^2\ a\ limit\ point\ of\ E?}$
+
+No.
+\begin{proof}
+For example, let $E := \left\{ (0,0) \right\}$, then $E' = \emptyset$; hence $(0,0)\notin E'$.
+
+Generally speaking, every finite subset $E$ of $\mathbb{R}^2$ is closed, however $E' = \emptyset$. 
+\end{proof}
+\end{itemize}
+\end{Exercise}
