@@ -1,0 +1,92 @@
+% === Exercise 2.10 ===
+\begin{Exercise}
+\begin{itemize}
+\item $\mathbf{Prove\ that\ this\ is\ a\ metric.}$
+\begin{proof}
+It suffices to prove three properties as following one by one.
+\begin{itemize}
+\item $\mathbf{Property\ 1:\ Positive\ Definite}$
+
+For $p=q$, $d(p,q) = d(p,p) = 0$. For $p\neq q$, $d(p,q) = 1 > 0$.
+
+Hence $d(p,q)\geq 0$ with equality if and only if $p=q$.
+
+\item $\mathbf{Property\ 2:\ Symmetric}$
+
+For $p=q$, $d(p,q) = 0 = d(q,p)$. For $p\neq q$, $d(p,q) = 1 = d(q,p)$.
+
+Hence $d(p,q) = d(q,p)$.
+
+\item $\mathbf{Property\ 3:\ Triangle\ Inequality}$
+
+Let $r\in X$, then we consider four cases as following.
+
+\begin{enumerate}
+\item $p=q=r$
+$$
+d(p,q) = 0 \leq 0 + 0 = d(p,r) + d(r,q).
+$$
+
+\item $p=q$ and $q\neq r$
+$$
+d(p,q) = 0 \leq 1 + 1 = d(p,r) + d(r,q).
+$$
+
+\item $p=r$ and $q\neq r$
+$$
+d(p,q) = 1 \leq 0 + 1 = d(p,r) + d(r,q).
+$$
+
+\item $p\neq q$ and $q\neq r$ and $p \neq r$
+$$
+d(p,q) = 1 \leq 1 + 1 = d(p,r) + d(r,q).
+$$
+\end{enumerate}
+
+Hence $d(p,q) \leq d(p,r) + d(r,q)$ always.
+\end{itemize}
+
+As a result, we conclude this is a metric.
+\end{proof}
+
+\item $\mathbf{Which\ subsets\ of\ X\ are\ closed?}$
+\begin{answer}
+All subsets of $X$.
+\end{answer}
+\begin{proof}
+Let $E$ be an arbitrary subset of $X$ and $p$ be an arbitrary point of $E$. 
+
+Pick $r = \frac{1}{2}$, then the neighborhood $N_r(p)$ only contains $p$ itself, then $p\notin E'$. By the arbitrary choice of $p$, then $E' = \emptyset$. This implies that $E'\subseteq E$ vacuously, so $E$ is closed.
+
+By the arbitrary choice of $E$, we conclude all subsets of $X$ are closed.
+\end{proof}
+
+\item $\mathbf{Which\ subsets\ of\ X\ are\ open?}$
+\begin{answer}
+All subsets of $X$.
+\end{answer}
+\begin{proof}
+Let $E$ be an arbitrary subset of $X$. Since all subsets are closed from the previous result, then we have $E$ is closed; hence we know $E^c$ is open. Notice that $E^c \subseteq X$.
+
+By the arbitrary choice of $E$, we conclude all subsets of $X$ are open. 
+\end{proof}
+
+\item $\mathbf{Which\ subsets\ of\ X\ are\ compact?}$
+\begin{answer}
+All finite subsets of $X$.
+\end{answer}
+\begin{proof}
+Let $E$ be an arbitrary subsets of $X$, then $E$ is either finite or infinite.
+
+If $E$ is finite, suppose $E = \{p_i: 1\leq i\leq n\}$ where $n$ is finite. We can pick an arbitrary open cover $\{G_{\alpha}\}$ of $E$ so that there are indices $\alpha_{1}, \cdots, \alpha_{n}$ such that $p_i\in G_{\alpha_i}$ for each $\alpha_i\in \alpha$. Hence
+$$
+E \subseteq \bigcup_{i=1}^{n}G_{\alpha_i} \subseteq G_{\alpha}.
+$$
+This implies there is a finite subcover of $E$. Moreover, by the arbitrary choice of an open cover, we know every open cover of $E$ contains a finite subcover. By definition, $E$ is compact.
+
+Otherwise, if $E$ is infinite, since $E$ is open from the previous result, then $E$ might includes subsets of single points. This implies we can select an infinite open cover of $E$ such that each cover is a single element of $E$. Since an open subcover contains an element, we cannot select finite open covers to contains infinitely many elements. So $E$ is not compact under this situation.
+
+By the arbitrary choice of $E$, we conclude all finite subset of $X$ are compact.
+\end{proof}
+\end{itemize}
+\end{Exercise}

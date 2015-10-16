@@ -4,6 +4,7 @@
 \usepackage[a4paper, total={6in, 8in}]{geometry}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{amssymb}
 \usepackage{fancyhdr}
 \usepackage{natbib}
 \usepackage{mathpazo}
@@ -32,6 +33,10 @@
   {\begin{proof}[Sketch]}
   {\end{proof}}
 
+\newenvironment{answer}
+  {\begin{proof}[Answer]\renewcommand{\qedsymbol}{}}
+  {\end{proof}}
+
 \newtheorem{theorem}{Theorem}[chapter]
 \newtheorem{lemma}[theorem]{Lemma}
 
@@ -41,6 +46,7 @@
 \rfoot{\thepage}
 
 \renewcommand{\dateseparator}{/}
+\renewcommand{\qedsymbol}{$\blacksquare$}
 % === -------------------- ===
 
 \begin{document}
