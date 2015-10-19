@@ -1,0 +1,15 @@
+% === Exercise 2.14 ===
+\begin{Exercise}
+\begin{answer}
+$\left\{ \left(\frac{1}{n+1},1\right) \right\}_{n\in\mathbb{N}}$
+\end{answer}
+\begin{proof}
+Consider the open cover $\left\{ \left(\frac{1}{n+1},1\right) \right\}_{n\in\mathbb{N}}$. If $r\in(0,1)$, then let $n\in\mathbb{N}$ be such that $\frac{1}{n+1}<r$; hence we know $r\in\left( \frac{1}{n+1},1 \right)$.
+
+Consider any finite open subcover $\left\{ \left(\frac{1}{i+1},1\right) \right\}_{i\in I}$ where $I\subset \mathbb{N}$. Notice that $|I|$ is finite. We pick $n\in\mathbb{N}$ such that $n+1>\max_{i\in I}\{i+1\}$, then $\frac{1}{n+1}\in(0,1)$; however, $\frac{1}{n+1} < \frac{1}{i+1}$ for all $i\in I$. Hence
+$$
+\frac{1}{n+1} \notin \bigcup_{i\in I}\left(\frac{1}{i+1},1\right).
+$$
+This means this open cover has no finite subcover.
+\end{proof}
+\end{Exercise}
