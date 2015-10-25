@@ -1,0 +1,78 @@
+\documentclass{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{natbib}
+\usepackage{mathpazo}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{caption}
+
+\usepackage{titletoc}
+\usepackage{import}
+\usepackage[yyyymmdd]{datetime}
+
+\usepackage{enumerate}
+\usepackage{type1cm}
+\usepackage{exercise,chngcntr}
+
+% === Environment Settings ===
+\newenvironment{solution}
+  {\begin{proof}[Solution]}
+  {\end{proof}}
+
+\newenvironment{sketch}
+  {\begin{proof}[Sketch]}
+  {\end{proof}}
+
+\newenvironment{answer}
+  {\begin{proof}[Answer]\renewcommand{\qedsymbol}{}}
+  {\end{proof}}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\rightmark}
+\rfoot{\thepage}
+
+\renewcommand{\dateseparator}{/}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+% === -------------------- ===
+
+\begin{document}
+\counterwithin{Exercise}{chapter}
+% === Math Font Setup ===
+$\mathbb{}$
+
+% === Cover Page ===
+
+% === Contents Pages ===
+\pagenumbering{roman}
+
+\titlecontents{chapter}
+  [0pt]
+  {\addvspace{1em}}
+  {\bfseries\chaptername\ \thecontentslabel\quad}
+  {}
+  {\bfseries\hfill\contentspage}
+\tableofcontents
+
+% === Preface ===
+\newpage
+
+% === Main Pages ===
+\newpage
+\pagenumbering{arabic}
+\subimport*{chapter2/}{chapter2}
+
+\end{document}

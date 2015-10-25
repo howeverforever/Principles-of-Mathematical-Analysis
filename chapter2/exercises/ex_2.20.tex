@@ -1,0 +1,32 @@
+% === Exercise 2.20 ===
+\begin{Exercise}
+\begin{itemize}
+\item $\mathbf{Are\ closures\ of\ connected\ sets\ always\ connected?}$
+\end{itemize}
+\begin{answer}
+Yes.
+\end{answer}
+\begin{proof}
+Let $E := A\cup B$ be a connected set in a metric $X$, then $A\cap\overline{B}\neq\emptyset$ and $\overline{A}\cap B\neq\emptyset$. Notice that $\overline{E} = \overline{A\cup B} = \overline{A}\cup\overline{B}$. If $\overline{E}$ is connected, it suffices to prove $\overline{A}\cap \overline{B}\neq\emptyset$.
+
+We claim $\overline{A}\cap\overline{B}\neq\emptyset$. Since $A\cap\overline{B}\neq\emptyset$ and $\overline{A}\cap B\neq\emptyset$, then there is an element $p$ such that $p\in A\cap\overline{B}$ or $p\in \overline{A}\cap B$. In either of two cases, $p\in (A\cup A')\cap(B\cup B')$. This implies $p\in \overline{A}\cap\overline{B}$; hence $\overline{A}\cap\overline{B}\neq\emptyset$.
+
+By the arbitrary choice of $E$ which is a connected set, we conclude every closure of connected set is also connected.
+\end{proof}
+
+\begin{itemize}
+\item $\mathbf{Are\ interiors\ of\ connected\ sets\ always\ connected?}$
+\end{itemize}
+\begin{answer}
+No.
+\end{answer}
+\begin{proof}
+Consider $E = \left\{(x,y):-1\leq x \leq 1, -|x|\leq y \leq |x|\right\} \subset \mathbb{R}^2$. Notice that $E$ is connected. Then we know
+$$
+E^{\circ} = \left\{(x,y):-1<x<1, -|x|<y<|x|\right\}\setminus(0,0).
+$$
+This interior of set $E$ can be separated by $\left\{(x,y):x<0\right\}$ and $\left\{(x,y):x>0\right\}$; hence $E^{\circ}$ is not connected.
+
+We have shown a counter-example, so we complete the proof.
+\end{proof}
+\end{Exercise}
