@@ -1,0 +1,29 @@
+% === Exercise 3.1 ===
+\begin{Exercise}
+\begin{proof}
+Notice that we assume the metric space is a Euclidean space.
+
+Suppose $\{s_n\}$ converges to $s$. That is, given $\epsilon>0$, there exists $N>0$ such that
+$$
+n\geq N \implies |s_n-s| < \epsilon.
+$$
+By Triangle Inequality, we know
+$$
+\left| |s_n|-|s| \right| \leq |s_n-s|.
+$$
+Hence
+$$
+n\geq N \implies \left| |s_n|-|s| \right| < \epsilon.
+$$
+This implies $\{|s_n|\}$ converges to $|s|$.
+\begin{itemize}
+\item $\mathbf{Is\ the\ converse\ true?}$
+\end{itemize}
+\begin{answer}
+No.
+\end{answer}
+\begin{proof}
+Let $s_n = (-1)^n$, then $\{|s_n|\} = \{ |(-1)^n| \} = \{ 1 \}$ converges to $1$. However, $\{ s_n \} = \{ (-1)^n \}$ is a sequence $\{-1,1,-1,1,\cdots \}$ which diverges.
+\end{proof}
+\end{proof}
+\end{Exercise}
