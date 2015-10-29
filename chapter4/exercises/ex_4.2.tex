@@ -1,0 +1,36 @@
+% === Exercise 4.2 ===
+\begin{Exercise}
+\begin{proof}
+If $f(\overline{E})$ is empty, then it holds trivially. Suppose $f(\overline{E})$ is nonempty. Let $y\in f(\overline{E})$. Put $y=f(e)$ for some $e\in E\cup E'$.
+
+If $e\in E$, then $y\in f(E)$. This implies $y\in\overline{f(E)}$ immediately.
+
+Otherwise, if $e\in E'$, then $N_{\delta}(e)$ contains infinitely many points in $E$ with $\delta>0$. Since $f$ is continuous, then given $\epsilon>0$, we know for all $\delta>0$,
+$$
+x\in N_{\delta}(e) \implies f(x)\in N_{\epsilon}(y).
+$$
+It follows that $N_{\epsilon}(y)$ contains infinitely many points in $f(E)$. Hence $y$ is a limit point of $f(E)$.
+
+In either of two cases, we observe $y\in f(E)\cup f(E)' = \overline{f(E)}$. By the arbitrary choice of $y$, we conclude $f(\overline{E})\subset \overline{f(E)}$.
+\end{proof}
+
+\begin{itemize}
+\item $f(\overline{E})$ can be a proper subset of $\overline{f(E)}$.
+\end{itemize}
+\begin{solution}
+We define $f:\mathbb{Z}\to\mathbb{R}$ by $f(x) = \frac{1}{x}$. Pick $\delta$ such that $0 < \delta < 1$. Given $\epsilon>0$, for all $x,y\in \mathbb{Z}$, we have
+$$
+d(x,y)< \delta \implies x = y.
+$$
+Hence $d(f(x),f(y)) = 0 < \epsilon$. This means $f$ is uniformly continuous and so is continuous.
+
+Now we put $E = \mathbb{Z}$. We see that
+$$
+f(\overline{\mathbb{Z}}) 
+= f(\mathbb{Z}) 
+= \{ \frac{1}{x} : x\in\mathbb{Z} \}
+\subset \{ \frac{1}{x} : x\in\mathbb{Z} \} \cup \{0\}
+= \overline{f(\mathbb{Z})}.
+$$
+\end{solution}
+\end{Exercise}
