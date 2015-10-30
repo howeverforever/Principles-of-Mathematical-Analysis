@@ -1,0 +1,79 @@
+% === Exercise 4.20 ===
+\begin{Exercise}
+\begin{enumerate}[(a)]
+\item
+\begin{proof}
+Notice that $d(x,z)\geq 0$ for all $x,z\in E$.
+
+$(\Longrightarrow)$
+Since $\rho_E(x) = 0$, then
+$$
+\inf_{z\in E}d(x,z) = 0.
+$$
+Suppose to contrary that $x\notin \overline{E}$, this implies $x\in \overline{E}^c$. Since $\overline{E}$ is closed, we have $\overline{E}^c$ is open. So there exists $r>0$ such that $d(x,y)<r$ for $y\in \overline{E}^c$. Hence $y\notin \overline{E}$. We obtain
+$$
+\inf_{z\in E}d(x,z) \geq r > 0
+$$
+which contradict $\rho_E(x) = 0$. So $x\in \overline{E}$.
+
+\vspace{2ex}
+
+$(\Longleftarrow)$
+Since $x\in \overline{E}$, then $x\in E$ or $x\in E'$. If $x\in E$, then we pick $z=x\in E$ to complete the proof. Otherwise, if $x\in E'$, given $\epsilon>0$, we can pick $z\in E$ such that $d(x,z)<\epsilon$. This means
+$$
+\inf_{z\in E}d(x,z) = 0.
+$$
+\end{proof}
+
+\item 
+\begin{proof}
+We consider three situations as follows.
+
+\begin{enumerate}
+\item[Case 1.] $x,y\in E$
+
+From part (a), we know $x,y\in \overline{E}$. Hence
+$$
+\left| \rho_E(x) - \rho_E(y) \right| = 0 \leq d(x,y).
+$$
+
+\item[Case 2.] $x\in E,y\in X\setminus E$ or $x\in X\setminus E,x\in E$
+
+W.L.O.G., we suppose $x\in E,y\in X\setminus E$. From part (a), we know $x\in \overline{E}$. Hence
+$$
+\left| \rho_E(x) - \rho_E(y) \right| 
+= |\rho_E(y)| 
+= \inf_{z\in E}d(y,z)
+\leq d(y,x)
+= d(x,y).
+$$
+By changing the roles of $x$ and $y$, we obtain the same result.
+
+\item[Case 3.] $x,y\in X\setminus E$
+
+Since $\rho_E(x) \leq d(x,z) \leq d(x,y) + d(y,z)$, then we pick $z$ so close to $y$ that given $\epsilon>0$,
+$$
+\rho_E(x) \leq d(x,y) + \rho_E(y) + \epsilon.
+$$
+This implies
+$$
+\rho_E(x) - \rho_E(y) \leq d(x,y) + \epsilon.
+$$
+By the arbitrary choice of $z$, we have
+
+$$
+\rho_E(x) - \rho_E(y) \leq d(x,y).
+$$
+By changing the roles of $x$ and $y$, we obtain
+$$
+\rho_E(y) - \rho_E(x) \leq d(x,y).
+$$
+They follow that
+$$
+\left| \rho_E(x) - \rho_E(y) \right| \leq d(x,y).
+$$
+\end{enumerate}
+Hence we conclude $\rho_E$ is a uniformly continuous function on $X$.
+\end{proof}
+\end{enumerate}
+\end{Exercise}

@@ -1,0 +1,36 @@
+% === Exercise 4.21 ===
+\begin{Exercise}
+\begin{proof}
+By Exercise 4.20, we know
+$$
+\rho_F(x) = 0 \iff x\in \overline{F}.
+$$
+Since $F$ is closed, then $x\in \overline{F} = F$. Notice that $K$ and $F$ are disjoint, this means for all $k\in K, t\in F$, we have $d(k,t) > 0$ and hence $\rho_F(k) > 0$. Because $\rho_F$ is uniformly continuous on $K$ and $K$ is compact, by Theorem 4.16, there exists $k'\in K$ such that $\rho_F(k') = \inf_{x\in K} \rho_F(x)$.
+If $p\in K, q\in F$, we consider
+$$
+0 < \frac{\inf_{x\in K} \rho_F(x)}{2}
+= \frac{\rho_F(k')}{2} 
+< \rho_F(p)
+\leq d(p,q).
+$$
+Hence we pick $\delta = \frac{\rho_F(k')}{2}$ to complete the proof.
+\end{proof}
+
+\begin{itemize}
+\item The conclusion may fail for two disjoint closed sets if neither is compact.
+\end{itemize}
+\begin{solution}
+Let
+\begin{align*}
+K &:= \mathbb{N};\\
+F &:= \{n+\frac{1}{2n}:n\in\mathbb{N} \}.
+\end{align*}
+Both are closed and not compact; also $K\cap F = \emptyset$. Given $\epsilon>0$, we can pick $n>\frac{1}{2\epsilon}$ and $p\in K,q\in F$ such that
+$$
+d(p,q) = \left| n-\left(n+\frac{1}{2n}\right) \right|
+= \frac{1}{2n}
+< \epsilon.
+$$
+This means $d(p,q)$ might equal to $0$.
+\end{solution}
+\end{Exercise}
