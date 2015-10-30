@@ -1,0 +1,26 @@
+% === Exercise 4.1 ===
+\begin{Exercise}
+\begin{answer}
+No.
+\end{answer}
+\begin{proof}
+Consider the function
+$$
+f(x) = \begin{cases}
+0 & \mbox{ for } x=0 \\
+1 & \mbox{ otherwise}
+\end{cases}.
+$$
+This function satisfies
+$$
+\lim_{h\to 0}\left[f(x+h)-f(x-h)\right] = 0
+$$
+for all $x\in\mathbb{R}^1$. However we claim $f$ is discontinuous at $x=0$.
+
+Given $\epsilon < 1$, for any $\delta >0$, we know for $x\in\mathbb{R}^1$, 
+$$
+0<|x-0|<\delta \implies |f(x)-f(0)| = 1 \geq \epsilon.
+$$
+So we have given a counter-example.
+\end{proof}
+\end{Exercise}

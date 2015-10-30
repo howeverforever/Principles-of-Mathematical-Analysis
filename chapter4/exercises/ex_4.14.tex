@@ -1,0 +1,10 @@
+% === Exercise 4.14 ===
+\begin{Exercise}
+\begin{proof}
+Let $g(x) := f(x) - x$. Since $f(x)$ is continuous on $I$ by hypothesis, and $x$ is also continuous on $I$ trivially. So $g$ is continuous on $I$.
+
+If $g(0) = 0$ or $g(1) = 0$, these mean $f(x) = x$ for $x=0$ or $x=1$. 
+
+Otherwise, W.L.O.G., we assume $g(0) > 0 > g(1)$, by Theorem 4.23 (Intermediate Value Theorem), there exists $x\in (0,1)$ such that $g(x) = 0$. This means $f(x) = x$ for at least one $x\in I$. A similar argument proves the same result when $g(0) < 0 < g(1)$.
+\end{proof}
+\end{Exercise}

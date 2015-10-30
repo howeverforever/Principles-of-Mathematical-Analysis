@@ -1,0 +1,18 @@
+% === Exercise 4.11 ===
+\begin{Exercise}
+\begin{proof}
+Let $\{x_n\}$ be an arbitrary Cauchy sequence in $X$, then given $\epsilon>0$, there exists $N,\delta>0$ such that
+$$
+n,m\geq N \implies d_X(x_n,x_m)<\delta.
+$$
+Since $f$ is uniformly continuous, by definition, we know
+$$
+d_X(x_n,x_m) <\delta \implies d_Y(f(x_n),f(x_m)) < \epsilon.
+$$
+Hence
+$$
+n,m\geq N \implies d_Y(f(x_n),f(x_m))<\epsilon.
+$$
+This means $\{f(x_n)\}$ is a Cauchy sequence in $Y$. Since $\{x_n\}$ was arbitrary, we complete the proof.
+\end{proof}
+\end{Exercise}
