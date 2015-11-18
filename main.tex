@@ -25,16 +25,20 @@
 \usepackage{exercise,chngcntr}
 
 % === Environment Settings ===
-\newenvironment{solution}
-  {\begin{proof}[Solution]}
-  {\end{proof}}
 
+\let\oldproofname=\proofname
+\renewcommand{\proofname}{\rm\bf{\oldproofname}}
+  
+\newenvironment{solution}
+  {\begin{proof}[$\mathbf{Solution}$]}
+  {\end{proof}}
+  
 \newenvironment{sketch}
-  {\begin{proof}[Sketch]}
+  {\begin{proof}[$\mathbf{Sketch}$]}
   {\end{proof}}
 
 \newenvironment{answer}
-  {\begin{proof}[Answer]\renewcommand{\qedsymbol}{}}
+  {\begin{proof}[$\mathbf{Answer}$]\renewcommand{\qedsymbol}{}}
   {\end{proof}}
 
 \newtheorem{theorem}{Theorem}[chapter]
@@ -73,8 +77,9 @@ $\mathbb{}$
 % === Main Pages ===
 \newpage
 \pagenumbering{arabic}
-\subimport*{chapter2/}{chapter2}
-\subimport*{chapter3/}{chapter3}
-\subimport*{chapter4/}{chapter4}
+%\subimport*{chapter2/}{chapter2}
+%\subimport*{chapter3/}{chapter3}
+%\subimport*{chapter4/}{chapter4}
+\subimport*{chapter5/}{chapter5}
 
 \end{document}
