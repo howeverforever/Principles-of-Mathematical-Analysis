@@ -51,6 +51,14 @@
 
 \renewcommand{\dateseparator}{/}
 \renewcommand{\qedsymbol}{$\blacksquare$}
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
 % === -------------------- ===
 
 \begin{document}
@@ -80,6 +88,7 @@ $\mathbb{}$
 %\subimport*{chapter2/}{chapter2}
 %\subimport*{chapter3/}{chapter3}
 %\subimport*{chapter4/}{chapter4}
-\subimport*{chapter5/}{chapter5}
+%\subimport*{chapter5/}{chapter5}
+\subimport*{chapter6/}{chapter6}
 
 \end{document}

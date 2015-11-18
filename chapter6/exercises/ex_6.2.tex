@@ -1,0 +1,34 @@
+% === Exercise 6.2 ===
+\begin{Exercise}
+	\begin{proof}
+		Given $\epsilon>0$, we suppose to contrary that $f(x_0) = \epsilon > 0$ for some $x_0\in[a,b]$.
+		Since $f$ is continuous on $[a,b]$, then $f$ is uniformly continuous on $[a,b]$. There exists $\delta > 0$ such that
+		$$
+		|x-x_0| < \delta \implies |f(x) - f(x_0)| < \frac{\epsilon}{2}.
+		$$
+		Let $P$ be a partition $\{a, x_0-\delta, x_0+\delta, b\}$ of $[a,b]$. Provided $|x - x_0| < \delta$, we have
+		$$
+		|f(x)-f(x_0)| = |\epsilon - f(x) | < \frac{\epsilon}{2}.
+		$$
+		This means $f(x) > \frac{\epsilon}{2}$.
+		It follows that
+		$$
+		L(P,f)
+		= \sum_i m_i \Delta x_i
+		\geq \inf_{x\in(x_0-\delta, x_0+\delta)} f(x) [(x_0+\delta) - (x_0-\delta)]
+		> \frac{\epsilon}{2}(2\delta)
+		= \epsilon \delta
+		> 0.
+		$$
+		Hence $\sup L(P,f) > 0$.
+		Notice that $f$ is continuous on $[a,b]$, then $f$ is integrable on $[a,b]$. So
+		$$
+		\int_{a}^{b} f(x)\,d x
+		= \lowint_{a}^{b} f(x)\,d x
+		= \sup L(P,f)
+		> 0.
+		$$
+		This contradicts $\int_{a}^{b} f(x)\,dx = 0$. We conclude $
+		f(x) = 0$ for all $x\in[a,b]$.
+	\end{proof}
+\end{Exercise}
