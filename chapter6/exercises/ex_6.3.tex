@@ -1,0 +1,220 @@
+% === Exercise 6.3 ===
+\begin{Exercise}
+	\begin{enumerate}[(a)]
+%		=== Part(a) ===
+		\item 
+		\begin{itemize}
+			\item Prove that $f\in \mathfrak{R}(\beta_1)$ if and only if $f(0+) = f(0)$.
+		\end{itemize}
+		\begin{proof}
+			$(\Longrightarrow)$
+			If $f\in \mathfrak{R}(\beta_1)$, by Theorem 6.6, we know given $\epsilon>0$, there exists a partition $P = \{x_0, x_1, \cdots, x_n\}$ where $x_k = 0$ for $0 < k < n$ such that 
+			$$
+			U(P,f,\beta_1) - L(P,f,\beta_1) < \epsilon.
+			$$
+			Let $x_{k-1} = a$ and $x_{k+1} = b$.
+			We also let
+			$$
+			m_a = \inf_{x\in[a, 0]} f(x);
+			M_a = \sup_{x\in[a, 0]} f(x);
+			m_b = \inf_{x\in[0, b]} f(x);
+			M_b = \sup_{x\in[0, b]} f(x).
+			$$
+			By definition of $\beta_1$, we know
+			\begin{align*}
+			U(P,f,\beta_1)
+			&= \sum_{i=1}^{n}M_i \big[ \beta_1(x_i) - \beta_1(x_{i-1}) \big]
+			= M_a \big[ \beta_1(0) - \beta_1(a) \big] + M_b \big[ \beta_1(b) - \beta_1(0) \big]
+			= M_b; \\
+			L(P,f,\beta_1)
+			&= \sum_{i=1}^{n}m_i \big[ \beta_1(x_i) - \beta_1(x_{i-1}) \big]
+			= m_a \big[ \beta_1(0) - \beta_1(a) \big] + m_b \big[ \beta_1(b) - \beta_1(0) \big]
+			= m_b.
+			\end{align*}
+			This means
+			$$
+			U(P,f,\beta_1) - L(P,f,\beta_1) 
+			= M_b - m_b
+			< \epsilon.
+			$$
+			Pick $\delta = x_{k+1}$, then for $x\in[0, \delta)$, we have
+			$$
+			m_b \leq f(0), f(x) \leq M_b.
+			$$
+			It follows that
+			$$
+			|f(x) - f(0)| \leq M_b - m_b < \epsilon.
+			$$
+			That is, 
+			$$
+			f(0+) := \lim_{x\to 0+} f(x) = f(0).
+			$$
+			
+			\vspace{2ex}
+			
+			$(\Longleftarrow)$
+			If $f(0+) = f(0)$, then given $\epsilon > 0$, there exists $\delta > 0$ such that
+			$$
+			0 \leq x < \delta \implies |f(x) - f(0)| < \epsilon.
+			$$
+			We pick a partition $P = \{x_0, x_1, \cdots, x_n\}$ where $x_k = 0$ for $0 < k < n$ with $x_{k+1} < \delta$. 
+			Define $m_b$, $M_b$ be the same as previous mentions.
+			We know for $x\in [0, \delta)$,
+			$$
+			U(P,f,\beta_1) - L(P,f,\beta_1)
+			= M_b - m_b
+			\leq |f(x) - f(0)|
+			< \epsilon.
+			$$
+			Since $\epsilon$ was arbitrary, we obtain $f\in\mathfrak{R}(\beta_1)$ by Theorem 6.6.
+		\end{proof}
+		
+		\begin{itemize}
+			\item $\int f\,d\beta_1 = f(0)$ under the hypothesis.
+		\end{itemize}
+		\begin{proof}
+			By definition, we know
+			$$
+			L(P,f,\beta_1) \leq \int f\,d\beta_1 \leq U(P,f,\beta_1).
+			$$
+			We follow the notations from previous arguments.
+			Thus we have
+			\begin{align*}
+			U(P,f,\beta_1) &= M_b \geq f(0); \\
+			L(P,f,\beta_1) &= m_b \leq f(0).
+			\end{align*}
+			Given $\epsilon > 0$, it follows that
+			\begin{align*}
+			f(0)-\int f\,d\beta_1 \leq U(P,f,\beta_1) - L(P,f,\beta_1) < \epsilon; \\
+			\int f\,d\beta_1-f(0) \leq U(P,f,\beta_1) - L(P,f,\beta_1) < \epsilon.
+			\end{align*}
+			Hence
+			$$
+			\left| \int f\,d\beta_1-f(0) \right| < \epsilon.
+			$$
+			Since $\epsilon$ was arbitrary, we conclude
+			$$
+			\int f\,d\beta_1 = f(0)
+			$$
+			as desired.
+		\end{proof}
+		
+%		=== Part(b) ===
+		\item
+		\begin{itemize}
+			\item Prove that $f\in \mathfrak{R}(\beta_2)$ if and only if $f(0-) = f(0)$.
+		\end{itemize}
+		\begin{proof}
+			This is similar to part(a). Here we just state the difference between this and part(a). 
+			We have
+			\begin{align*}
+			U(P,f,\beta_2)
+			&= \sum_{i=1}^{n}M_i \big[ \beta_2(x_i) - \beta_2(x_{i-1}) \big]
+			= M_a \big[ \beta_2(0) - \beta_2(a) \big] + M_b \big[ \beta_2(b) - \beta_2(0) \big]
+			= M_a; \\
+			L(P,f,\beta_2)
+			&= \sum_{i=1}^{n}m_i \big[ \beta_2(x_i) - \beta_2(x_{i-1}) \big]
+			= m_a \big[ \beta_2(0) - \beta_2(a) \big] + m_b \big[ \beta_2(b) - \beta_2(0) \big]
+			= m_a.
+			\end{align*}
+			And then replace $m_b$, $M_b$ by $m_a, M_a$, respectively.
+			Besides, we pick $\delta = x_{k-1}$ and consider $x\in (\delta, 0]$.
+		\end{proof}
+		
+		\begin{itemize}
+			\item $\int f\,d\beta_2 = f(0)$ under the hypothesis.
+		\end{itemize}
+		\begin{proof}
+			By definition, we know
+			$$
+			L(P,f,\beta_2) \leq \int f\,d\beta_2 \leq U(P,f,\beta_2).
+			$$
+			We follow the notations from previous arguments.
+			Thus we have
+			\begin{align*}
+			U(P,f,\beta_2) &= M_a \geq f(0); \\
+			L(P,f,\beta_2) &= m_a \leq f(0).
+			\end{align*}
+			Given $\epsilon > 0$, it follows that
+			\begin{align*}
+			f(0)-\int f\,d\beta_2 \leq U(P,f,\beta_2) - L(P,f,\beta_2) < \epsilon; \\
+			\int f\,d\beta_2-f(0) \leq U(P,f,\beta_2) - L(P,f,\beta_2) < \epsilon.
+			\end{align*}
+			Hence
+			$$
+			\left| \int f\,d\beta_2-f(0) \right| < \epsilon.
+			$$
+			Since $\epsilon$ was arbitrary, we conclude
+			$$
+			\int f\,d\beta_2 = f(0)
+			$$
+			as desired.
+		\end{proof}
+		
+%		=== Part(c) ===
+		\item
+		\begin{proof}
+			We follow the notations from previous arguments.
+			
+			Consider
+			\begin{align*}
+			U(P,f,\beta_3)
+			&= M_a \big[ \beta_3(0) - \beta_3(a) \big] + M_b \big[ \beta_3(b) - \beta_3(0) \big]
+			= \frac{1}{2}(M_a + M_b); \\
+			L(P,f,\beta_3)
+			&= m_a \big[ \beta_3(0) - \beta_3(a) \big] + m_b \big[ \beta_3(b) - \beta_3(0) \big]
+			= \frac{1}{2}(m_a + m_b).
+			\end{align*}
+			Given $\epsilon > 0$, as from part(a), we know
+			\begin{equation}
+			M_a - m_a < \epsilon \iff f(0+) = f(0);\label{eq:ex_6.3c1}
+			\end{equation}
+			as from part(b), we know
+			\begin{equation}
+			M_b - m_b < \epsilon \iff f(0-) = f(0).\label{eq:ex_6.3c2}
+			\end{equation}
+			Hence
+			$$
+			U(P,f,\beta_3) - L(P,f,\beta_3) < \epsilon \iff f(0+) = f(0) = f(0-).
+			$$
+			Since $\epsilon$ was arbitrary, we obtain $f\in\mathfrak{R}$ by Theorem 6.6.
+			Notice that $f(0+) = f(0-) = f(0)$ if and only if $f$ is continuous at $0$.
+			We conclude $f\in\mathfrak{R}(\beta_3)$ if and only if $f$ is continuous at $0$.
+		\end{proof}
+		
+%		=== Part(d) ===
+		\item
+		\begin{proof}
+			Since $f$ is continuous at $0$, then $f(0+) = f(0) = f(0-)$.
+			We have
+			$$
+			\int f\,d\beta_1 = f(0)
+			$$
+			from part(a); also
+			$$
+			\int f\,d\beta_2 = f(0)
+			$$
+			from part(b).
+			Notice that \eqref{eq:ex_6.3c1} and \eqref{eq:ex_6.3c2} hold, and
+			\begin{align*}
+			f(0)
+			&\leq U(P,f,\beta_3)
+			= \frac{1}{2}(M_a + M_b)
+			\leq \int f\,d\beta_3; \\
+			f(0)
+			&\geq L(P,f,\beta_3)
+			= \frac{1}{2}(m_a + m_b)
+			\geq \int f\,d\beta_3.			
+			\end{align*}
+			Hence
+			$$
+			\left| \int f\,d\beta_3 - f(0) \right| < \epsilon.
+			$$
+			Since $\epsilon$ was arbitrary,
+			$$
+			\int f\,d\beta_3 = f(0)
+			$$
+			follows.
+		\end{proof}
+	\end{enumerate}
+\end{Exercise}
