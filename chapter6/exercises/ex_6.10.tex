@@ -1,0 +1,96 @@
+% === Exercise 6.10 ===
+\begin{Exercise}
+	\begin{enumerate}[(a)]
+%		=== Part(a) ===
+		\item 
+		\begin{proof}
+			Consider
+			$$
+			uv = (u^p)^{\frac{1}{p}} (v^q)^{\frac{1}{q}}
+			= e^{\frac{1}{p} \ln(u^p) + \frac{1}{q} \ln(v^q)}.
+			$$
+			We define a real function $f$ by $f(x) = e^x$.
+			Since $f'(x) = e^x > 0$, $f$ is monotonically increasing, then $f$ is convex and one-to-one.
+			Notice that the hypothesis guarantees
+			$$
+			\frac{1}{p} + \frac{1}{q} = 1.
+			$$
+			It follows that
+			\begin{align*}
+			uv 
+			&= f\left(\frac{1}{p} \ln(u^p) + \frac{1}{q} \ln(v^q)\right) \\
+			&\leq \frac{1}{p} f\big(\ln(u^p)\big) + \frac{1}{q} f\big(\ln(v^q)\big) \\
+			&= \frac{u^p}{p} + \frac{v^q}{q}. 
+			\end{align*}
+			The equality holds if and only if $\ln(u^p) = \ln(v^q)$.
+			Since $\ln$ is one-to-one, we conclude the equality holds if and only if $u^p = v^q$.
+		\end{proof}
+		
+%		=== Part(b) ===
+		\item
+		\begin{proof}
+			Since $f,g\in\mathfrak{R}(\alpha)$, then $fg\in\mathfrak{R}(\alpha)$ by Theorem 6.13(a).
+			Since $f,g\geq 0$, from part(a), we obtain
+			$$
+			fg \leq \frac{f^p}{p}+\frac{g^q}{q}
+			$$
+			holds on $[a,b]$.
+			This implies that
+			\begin{align*}
+			\int_{a}^{b} fg\, d\alpha
+			&\leq \int_{a}^{b} \left( \frac{f^p}{p}+\frac{g^q}{q} \right)\, d\alpha \\
+			&= \frac{1}{p} \int_{a}^{b}f^p\, d\alpha + \frac{1}{q} \int_{a}^{b}g^q\, d\alpha. \\
+			&= \frac{1}{p} + \frac{1}{q} \\
+			&= 1.
+			\end{align*}
+		\end{proof}
+		
+%		=== Part(c) ===
+		\item
+		\begin{proof}
+			Let
+			\begin{align*}
+			A &:= \int_{a}^{b}|f|^p\, d\alpha \geq 0; \\
+			B &:= \int_{a}^{b}|g|^q\, d\alpha \geq 0.
+			\end{align*}
+			We define
+			\begin{align*}
+			F(x) := \frac{f(x)}{A^{\frac{1}{p}}}; \\
+			G(x) := \frac{g(x)}{B^{\frac{1}{q}}}.
+			\end{align*}
+			We have
+			\begin{align*}
+			\int_{a}^{b} |F|^p\, d\alpha 
+			&= \frac{1}{A} \int_{a}^{b}|f|^p\, d\alpha 
+			= \frac{A}{A} = 1; \\
+			\int_{a}^{b} |G|^q\, d\alpha
+			&= \frac{1}{B} \int_{a}^{b}|g|^q\, d\alpha 
+			= \frac{B}{B} = 1.
+			\end{align*}
+			Since $f,g\in\mathfrak{R}(\alpha)$, then $F,G\in\mathfrak{R}(\alpha)$; furthermore, $|F|, |G|\in\mathfrak{R}(\alpha)$.
+			From part(b), we obtain
+			$$
+			\int_{a}^{b} |FG|\, d\alpha \leq 1.
+			$$
+			This implies
+			$$
+			\frac{1}{A^{\frac{1}{p}}B^{\frac{1}{q}}} \int_{a}^{b} |fg|\, d\alpha \leq 1.
+			$$
+			It follows that
+			$$
+			\int_{a}^{b} |fg|\, d\alpha
+			\leq A^{\frac{1}{p}} B^{\frac{1}{q}}
+			= \left\{\int_{a}^{b}|f|^p\, d\alpha \right\}^{\frac{1}{p}} \left\{\int_{a}^{b}|g|^q\, d\alpha \right\}^{\frac{1}{q}}.
+			$$
+			Notice that by Theorem 6.13(b), we have
+			$$
+			\left| \int_{a}^{b} fg\, d\alpha \right| \leq \int_{a}^{b} |fg|\, d\alpha.
+			$$
+			Hence we conclude
+			$$
+			\left| \int_{a}^{b} fg\, d\alpha \right|
+			\leq \left\{\int_{a}^{b}|f|^p\, d\alpha \right\}^{\frac{1}{p}} \left\{\int_{a}^{b}|g|^q\, d\alpha \right\}^{\frac{1}{q}}.
+			$$
+		\end{proof}
+	\end{enumerate}
+\end{Exercise}

@@ -1,0 +1,23 @@
+% === Exercise 6.4 ===
+\begin{Exercise}
+	\begin{proof}
+		Consider any partition of $P = \{x_0, x_1, \cdots, x_n\}$ of $[a,b]$.
+		Since rational and irrational numbers are dense in $\mathbb{R}$, we know there exists a rational number and an irrational one in the interval $[x_{i-1}, x_i]$ for each $i = 1,2,\cdots, n$.
+		This means
+		$$
+		M_i = 1; m_i = 0
+		$$
+		for each $i$.
+		It follows that
+		\begin{align*}
+		U(P,f) &= \sum_{i=1}^{n} M_i\Delta x_i = b-a; \\
+		L(P,f) &= \sum_{i=1}^{n} m_i\Delta x_i = 0.
+		\end{align*}
+		Given $\epsilon$ with $0 < \epsilon \leq b-a$, we observe
+		$$
+		U(P,f) - L(P,f) = b-a \geq \epsilon > 0.
+		$$
+		By Theorem 6.6, we conclude $f\notin \mathfrak{R}$ on $[a,b]$.
+		Since $a$, $b$ were arbitrary with $a<b$, we are done.
+	\end{proof}
+\end{Exercise}
