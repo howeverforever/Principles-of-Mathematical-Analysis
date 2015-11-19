@@ -1,39 +1,39 @@
 % === Exercise 5.11 ===
 \begin{Exercise}
-\begin{proof}
-Consider
-$$
-\lim_{h\to 0}\frac{f(x+h) + f(x-h) -2f(x)}{h^2}.
-$$
-We observe
-\begin{align*}
-&\lim_{h\to 0}f(x+h)+f(x-h)-2f(x) = 0; \\
-&\lim_{h\to 0}h^2 =0.
-\end{align*}
-By L'Hospital's Rule, we differentiate them over $h$, then obtain
-\begin{align*}
-\lim_{h\to 0}\frac{f(x+h) + f(x-h) -2f(x)}{h^2}
-&= \lim_{h\to 0}\frac{f'(x+h) - f'(x-h)}{2h} \\
-&= \frac{1}{2} \lim_{h\to 0}\left( \frac{f'(x+h)-f'(x)}{h} + \frac{f'(x) - f'(x-h)}{h} \right)\\
-&= \frac{1}{2} \big(f''(x) + f''(x) \big) \\
-&= f''(x)
-\end{align*}
-which is a desired result.
-\end{proof}
-\begin{itemize}
-\item An example that the limit may exist even if $f''(x)$ does not.
-\end{itemize}
-\begin{answer}
-$f(x) = \begin{cases}
-x^2 & \mbox{for } x > 0 \\
--x^2 & \mbox{for } x < 0 \\
-0 & \mbox{otherwise}
-\end{cases}$.
-\end{answer}
-\begin{proof}
-Since $f''(x) = \begin{cases}
-2 & \mbox{for } x> 0 \\
--2 & \mbox{for } x<0 \\
-\end{cases}$, then $f''(x)$ does not exist at $x=0$.
-\end{proof}
+	\begin{proof}
+		Consider
+		$$
+		\lim_{h\to 0}\frac{f(x+h) + f(x-h) -2f(x)}{h^2}.
+		$$
+		We observe
+		\begin{align*}
+		&\lim_{h\to 0}f(x+h)+f(x-h)-2f(x) = 0; \\
+		&\lim_{h\to 0}h^2 =0.
+		\end{align*}
+		By L'Hospital's Rule, we differentiate them over $h$, then obtain
+		\begin{align*}
+		\lim_{h\to 0}\frac{f(x+h) + f(x-h) -2f(x)}{h^2}
+		&= \lim_{h\to 0}\frac{f'(x+h) - f'(x-h)}{2h} \\
+		&= \frac{1}{2} \lim_{h\to 0}\left( \frac{f'(x+h)-f'(x)}{h} + \frac{f'(x) - f'(x-h)}{h} \right)\\
+		&= \frac{1}{2} \big(f''(x) + f''(x) \big) \\
+		&= f''(x)
+		\end{align*}
+		which is a desired result.
+	\end{proof}
+	\begin{itemize}
+		\item An example that the limit may exist even if $f''(x)$ does not.
+	\end{itemize}
+	\begin{answer}
+		$f(x) = \begin{cases}
+		x^2 & \mbox{for } x > 0 \\
+		-x^2 & \mbox{for } x < 0 \\
+		0 & \mbox{otherwise}
+		\end{cases}$.
+	\end{answer}
+	\begin{proof}
+		Since $f''(x) = \begin{cases}
+		2 & \mbox{for } x> 0 \\
+		-2 & \mbox{for } x<0 \\
+		\end{cases}$, then $f''(x)$ does not exist at $x=0$.
+	\end{proof}
 \end{Exercise}

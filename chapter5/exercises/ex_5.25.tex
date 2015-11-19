@@ -1,153 +1,153 @@
 % === Exercise 5.25 ===
 \begin{Exercise}
-\begin{enumerate}[(a)]
-\item 
-\begin{solution}
-Consider the tangent line to a point $(x_n, y_n)$ is
-$$
-y-y_n = f'(x_n) (x-x_n).
-$$
-Pick $x = x_{n+1}$ and $y = 0$, also put $y_n = f(x_n)$, then we have
-\begin{equation}\label{eq:ex_5.25a}
-x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}.
-\end{equation}
-Hence in the geometrical opinion, $x_{n+1}$ is chosen to be the intersection of the tangent line to $\big(x_n, f(x_n)\big)$ and $x$-axis.
-\end{solution}
-
-\item
-\begin{proof}
-By hypothesis and Intermediate Value Theorem, we know $f(x) > 0$ when $x > \xi$. This implies
-$$
-\frac{f(x_n)}{f'(x_n)} > 0.
-$$
-We observe $x_{n+1} < x_n$ by \eqref{eq:ex_5.25a}.
-
-Since $f''(x) \geq 0$, then $f'(x)$ is increasing. This means
-$$
-c < x_n \implies f'(c) \leq f'(x_n).
-$$
-Pick $c$ such that $\xi < c < x_n$, then by the Mean Value Theorem, we have
-$$
-\frac{f(x_n)-f(\xi)}{x_n-\xi} = f'(c) \leq f'(x_n).
-$$
-Notice that $f(\xi) = 0$, then rearrange the inequality to obtain
-$$
-x_n - \frac{f(x_n)}{f'(x_n)} = x_{n+1}\geq \xi.
-$$
-We have $\xi < x_{n+1} < x_n$ so far.
-
-Construct the sequence $\{x_n\}$.
-Since $x_n$ is decreasing and bounded below by $\xi$, by Theorem 3.14, $\{x_n\}$ converges to some $\eta$.
-Consider \eqref{eq:ex_5.25a}.
-Taking the limit on both sides as $n\to\infty$, we have
-$$
-\eta = \eta - \lim_{n\to\infty}\frac{f(x_n)}{f'(x_n)}.
-$$
-This implies
-$$
-\lim_{n\to\infty}\frac{f(x_n)}{f'(x_n)} = 0.
-$$
-Since $f''(x)$ is bounded and so is $f'(x)$, we obtain
-$$
-\lim_{n\to\infty}f(x_n) = 0 = f(\xi).
-$$
-Notice that $f'(x)$ exists on $[a,b]$, and hence $f$ is continuous on $[a,b]$. 
-By Theorem 4.2, we conclude that
-$$
-\lim_{n\to\infty}x_n = \xi
-$$
-as promised eventually.
-\end{proof}
-
-\item
-\begin{proof}
-Using the Taylor's Theorem, we have
-$$
-f(\xi) = f(x_n) + f'(x_n)(\xi-x_n)+\frac{f''(t_n)}{2}(\xi-x_n)^2
-$$
-where $t_n\in(\xi, x_n)$.
-Since $f'(x_n)> 0$, divides $f'(x_n)$, then we have
-$$
-\frac{f(\xi)}{f'(x_n)} = \frac{f(x_n)}{f'(x_n)} + (\xi-x_n) + \frac{f''(t_n)}{2f'(x_n)}(\xi-x_n)^2.
-$$
-Since $f(\xi) = 0$, we rearrange the equation and obtain
-$$
-x_n - \frac{f(x_n)}{f'(x_n)} - \xi = \frac{f''(t_n)}{2f'(x_n)}(x_n-\xi)^2.
-$$
-By definition of $x_{n+1}$, we conclude
-\begin{equation}\label{eq:ex_5.25d}
-x_{n+1} - \xi = \frac{f''(t_n)}{2f'(x_n)}(x_n-\xi)^2.
-\end{equation}
-\end{proof}
-
-\item
-\begin{proof}
-We have known $0 \leq x_{n+1} - \xi$ from part(b) trivially.
-Consider \eqref{eq:ex_5.25d}.
-Since $f''(x) \leq M$ and $f'(x) \leq \delta$ by hypothesis, we have
-$$
-x_{n+1}-\xi \leq \frac{M}{2\delta}(x_n-\xi)^2 = A(x_n-\xi)^2.
-$$
-This inequality holds for $n\in\mathbb{N}$. By induction, we know
-\begin{align*}
-x_{n+1}-\xi
-&\leq A(x_n-\xi)^2 \\
-&\leq A\cdot A^2 (x_{n-1}-\xi)^4 \\
-&\leq \cdots \\
-&\leq A\cdot A^2 \cdots \cdot A^{2^{n-1}} (x_1-\xi)^{2^n} \\
-&= A^{2^n-1} (x_1-\xi)^{2^n} \\
-&= \frac{1}{A} \big[A(x_1-\xi)\big]^{2^n}.
-\end{align*}
-Hence we deduce
-$$
-0 \leq x_{n+1}-\xi \leq \frac{1}{A} \big[A(x_1-\xi)\big]^{2^n}.
-$$
-\end{proof}
-
-\item
-\begin{itemize}
-\item Show that Newton's method amounts to finding a fixed point of the function $g$. 
-\end{itemize}
-\begin{solution}
-Suppose we have known $\eta$ is a fixed point of the function $g$ such that $g(\eta) = \eta$. Then
-$$
-g(\eta) - \eta = \frac{f(\eta)}{f'(\eta)} = 0.
-$$
-Since $f''$ is bounded and so is $f'$, then we have $f(\eta) = 0$.
-This means $\eta$ is the unique point such that $f(\eta) = 0$.
-\end{solution}
-\begin{itemize}
-\item How does $g'(x)$ behave for $x$ near $\xi$?
-\end{itemize}
-\begin{solution}
-Notice that $g'$ exists on $[a,b]$. Compute
-$$
-g'(x) = 1 - \frac{\big[ f'(x) \big]^2 - f''(x) f(x)}{\big[ f'(x) \big]^2} = \frac{f''(x) f(x)}{\big[ f'(x) \big]^2}.
-$$
-Taking the limit on both sides as $x\to xi$, we have
-$$
-\lim_{x\to\xi}g'(x) = \lim_{x\to\xi}f(x) \lim_{x\to\xi} \frac{f''(x)}{[f'(x)]^2}.
-$$
-Since $f$ is continuous near $\xi$, then we know
-$$
-\lim_{x\to\xi} f(x) = f(\xi) = 0.
-$$
-This means
-$$
-\lim_{x\to\xi}g'(x) = 0.
-$$
-We deduce $g'(x)$ tends to $0$ as $x$ tends $\xi$.
-\end{solution}
-
-\item
-\begin{solution}
-Compute
-$$
-f'(x) = \frac{1}{3} x^{-\frac{2}{3}}.
-$$
-We observe $0$ is a fixed point such that $f(0) = 0$.
-However, $f'(0)$ does not exist.
-Hence the sequence $\{x_n\}$ diverges.
-\end{solution}
-\end{enumerate}
+	\begin{enumerate}[(a)]
+		\item 
+		\begin{solution}
+			Consider the tangent line to a point $(x_n, y_n)$ is
+			$$
+			y-y_n = f'(x_n) (x-x_n).
+			$$
+			Pick $x = x_{n+1}$ and $y = 0$, also put $y_n = f(x_n)$, then we have
+			\begin{equation}\label{eq:ex_5.25a}
+			x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}.
+			\end{equation}
+			Hence in the geometrical opinion, $x_{n+1}$ is chosen to be the intersection of the tangent line to $\big(x_n, f(x_n)\big)$ and $x$-axis.
+		\end{solution}
+		
+		\item
+		\begin{proof}
+			By hypothesis and Intermediate Value Theorem, we know $f(x) > 0$ when $x > \xi$. This implies
+			$$
+			\frac{f(x_n)}{f'(x_n)} > 0.
+			$$
+			We observe $x_{n+1} < x_n$ by \eqref{eq:ex_5.25a}.
+			
+			Since $f''(x) \geq 0$, then $f'(x)$ is increasing. This means
+			$$
+			c < x_n \implies f'(c) \leq f'(x_n).
+			$$
+			Pick $c$ such that $\xi < c < x_n$, then by the Mean Value Theorem, we have
+			$$
+			\frac{f(x_n)-f(\xi)}{x_n-\xi} = f'(c) \leq f'(x_n).
+			$$
+			Notice that $f(\xi) = 0$, then rearrange the inequality to obtain
+			$$
+			x_n - \frac{f(x_n)}{f'(x_n)} = x_{n+1}\geq \xi.
+			$$
+			We have $\xi < x_{n+1} < x_n$ so far.
+			
+			Construct the sequence $\{x_n\}$.
+			Since $x_n$ is decreasing and bounded below by $\xi$, by Theorem 3.14, $\{x_n\}$ converges to some $\eta$.
+			Consider \eqref{eq:ex_5.25a}.
+			Taking the limit on both sides as $n\to\infty$, we have
+			$$
+			\eta = \eta - \lim_{n\to\infty}\frac{f(x_n)}{f'(x_n)}.
+			$$
+			This implies
+			$$
+			\lim_{n\to\infty}\frac{f(x_n)}{f'(x_n)} = 0.
+			$$
+			Since $f''(x)$ is bounded and so is $f'(x)$, we obtain
+			$$
+			\lim_{n\to\infty}f(x_n) = 0 = f(\xi).
+			$$
+			Notice that $f'(x)$ exists on $[a,b]$, and hence $f$ is continuous on $[a,b]$. 
+			By Theorem 4.2, we conclude that
+			$$
+			\lim_{n\to\infty}x_n = \xi
+			$$
+			as promised eventually.
+		\end{proof}
+		
+		\item
+		\begin{proof}
+			Using the Taylor's Theorem, we have
+			$$
+			f(\xi) = f(x_n) + f'(x_n)(\xi-x_n)+\frac{f''(t_n)}{2}(\xi-x_n)^2
+			$$
+			where $t_n\in(\xi, x_n)$.
+			Since $f'(x_n)> 0$, divides $f'(x_n)$, then we have
+			$$
+			\frac{f(\xi)}{f'(x_n)} = \frac{f(x_n)}{f'(x_n)} + (\xi-x_n) + \frac{f''(t_n)}{2f'(x_n)}(\xi-x_n)^2.
+			$$
+			Since $f(\xi) = 0$, we rearrange the equation and obtain
+			$$
+			x_n - \frac{f(x_n)}{f'(x_n)} - \xi = \frac{f''(t_n)}{2f'(x_n)}(x_n-\xi)^2.
+			$$
+			By definition of $x_{n+1}$, we conclude
+			\begin{equation}\label{eq:ex_5.25d}
+			x_{n+1} - \xi = \frac{f''(t_n)}{2f'(x_n)}(x_n-\xi)^2.
+			\end{equation}
+		\end{proof}
+		
+		\item
+		\begin{proof}
+			We have known $0 \leq x_{n+1} - \xi$ from part(b) trivially.
+			Consider \eqref{eq:ex_5.25d}.
+			Since $f''(x) \leq M$ and $f'(x) \leq \delta$ by hypothesis, we have
+			$$
+			x_{n+1}-\xi \leq \frac{M}{2\delta}(x_n-\xi)^2 = A(x_n-\xi)^2.
+			$$
+			This inequality holds for $n\in\mathbb{N}$. By induction, we know
+			\begin{align*}
+			x_{n+1}-\xi
+			&\leq A(x_n-\xi)^2 \\
+			&\leq A\cdot A^2 (x_{n-1}-\xi)^4 \\
+			&\leq \cdots \\
+			&\leq A\cdot A^2 \cdots \cdot A^{2^{n-1}} (x_1-\xi)^{2^n} \\
+			&= A^{2^n-1} (x_1-\xi)^{2^n} \\
+			&= \frac{1}{A} \big[A(x_1-\xi)\big]^{2^n}.
+			\end{align*}
+			Hence we deduce
+			$$
+			0 \leq x_{n+1}-\xi \leq \frac{1}{A} \big[A(x_1-\xi)\big]^{2^n}.
+			$$
+		\end{proof}
+		
+		\item
+		\begin{itemize}
+			\item Show that Newton's method amounts to finding a fixed point of the function $g$. 
+		\end{itemize}
+		\begin{solution}
+			Suppose we have known $\eta$ is a fixed point of the function $g$ such that $g(\eta) = \eta$. Then
+			$$
+			g(\eta) - \eta = \frac{f(\eta)}{f'(\eta)} = 0.
+			$$
+			Since $f''$ is bounded and so is $f'$, then we have $f(\eta) = 0$.
+			This means $\eta$ is the unique point such that $f(\eta) = 0$.
+		\end{solution}
+		\begin{itemize}
+			\item How does $g'(x)$ behave for $x$ near $\xi$?
+		\end{itemize}
+		\begin{solution}
+			Notice that $g'$ exists on $[a,b]$. Compute
+			$$
+			g'(x) = 1 - \frac{\big[ f'(x) \big]^2 - f''(x) f(x)}{\big[ f'(x) \big]^2} = \frac{f''(x) f(x)}{\big[ f'(x) \big]^2}.
+			$$
+			Taking the limit on both sides as $x\to xi$, we have
+			$$
+			\lim_{x\to\xi}g'(x) = \lim_{x\to\xi}f(x) \lim_{x\to\xi} \frac{f''(x)}{[f'(x)]^2}.
+			$$
+			Since $f$ is continuous near $\xi$, then we know
+			$$
+			\lim_{x\to\xi} f(x) = f(\xi) = 0.
+			$$
+			This means
+			$$
+			\lim_{x\to\xi}g'(x) = 0.
+			$$
+			We deduce $g'(x)$ tends to $0$ as $x$ tends $\xi$.
+		\end{solution}
+		
+		\item
+		\begin{solution}
+			Compute
+			$$
+			f'(x) = \frac{1}{3} x^{-\frac{2}{3}}.
+			$$
+			We observe $0$ is a fixed point such that $f(0) = 0$.
+			However, $f'(0)$ does not exist.
+			Hence the sequence $\{x_n\}$ diverges.
+		\end{solution}
+	\end{enumerate}
 \end{Exercise}

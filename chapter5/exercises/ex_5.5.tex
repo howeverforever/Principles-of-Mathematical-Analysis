@@ -1,21 +1,21 @@
 % === Exercise 5.5 ===
 \begin{Exercise}
-\begin{proof}
-Since $f'(x)\to 0$ as $x\to\infty$, then given $\epsilon>0$, there exists $N>0$ such that
-$$
-x\geq N \implies |f'(x)| < \epsilon.
-$$
-By the Mean Value Theorem, we consider
-$$
-g(x) = f(x+1)-f(x)
-= \frac{f(x+1)-f(x)}{(x+1)-x}
-= f'(c)
-$$
-where $c\in(x,x+1)$. 
-We pick $x \geq N$, then this means $c>x\geq N$. So
-$$
-|g(x)| = |f'(c)| < \epsilon.
-$$
-It follows that $g(x)\to 0$ as $x\to\infty$.
-\end{proof}
+	\begin{proof}
+		Since $f'(x)\to 0$ as $x\to\infty$, then given $\epsilon>0$, there exists $N>0$ such that
+		$$
+		x\geq N \implies |f'(x)| < \epsilon.
+		$$
+		By the Mean Value Theorem, we consider
+		$$
+		g(x) = f(x+1)-f(x)
+		= \frac{f(x+1)-f(x)}{(x+1)-x}
+		= f'(c)
+		$$
+		where $c\in(x,x+1)$. 
+		We pick $x \geq N$, then this means $c>x\geq N$. So
+		$$
+		|g(x)| = |f'(c)| < \epsilon.
+		$$
+		It follows that $g(x)\to 0$ as $x\to\infty$.
+	\end{proof}
 \end{Exercise}

@@ -1,87 +1,87 @@
 % === Exercise 4.7 ===
 \begin{Exercise}
-\begin{itemize}
-\item Prove that $f$ is bounded on $\mathbb{R}^2$.
-\end{itemize}
-\begin{proof}
-For $(x,y) \neq (0,0)$, we consider $(x-y^2)^2 \geq 0$. Then
-\begin{alignat*}{7}
-\quad&& 0 &\leq \left| (x-y^2)^2 \right| \\
-\implies&& 0 &\leq \left| x^2 - 2x y^2+ y^4 \right| \leq |x^2+y^4|+|2x y^2| \\
-\implies&& \left| \frac{2 x y^2}{x^2+y^4} \right| &\leq 1 \\
-\implies&& |f(x,y)| &\leq \frac{1}{2}
-\end{alignat*}
-Otherwise, for $(x,y)=(0,0)$, we have $|f(0,0)| = 0 \leq \frac{1}{2}$ trivially.
-
-Hence $f(x,y)$ is bounded by $\frac{1}{2}$.
-\end{proof}
-
-\begin{itemize}
-\item Prove that $g$ is unbounded in every neighborhood of $(0,0)$.
-\end{itemize}
-\begin{proof}
-Let $x := t^3$ and $y := t$, we observe $\lim_{t\to 0} x = 0$ and $\lim_{t\to 0} y = 0$. Then for $t\neq 0$, we know $(x,y) \neq (0,0)$. Consider
-$$
-\lim_{t\to 0} g(x,y) = \lim_{t\to 0} g(t^3,t) = \lim_{t\to 0}\frac{1}{t} = \infty.
-$$
-Hence $g$ is unbounded in every neighborhood of $(0,0)$.
-\end{proof}
-
-\begin{itemize}
-\item Prove that $f$ is not continuous at $(0,0)$.
-\end{itemize}
-\begin{proof}
-Given $\epsilon = \frac{1}{2}$, for $(x,y)\neq (0,0)$, there exists $\delta > 0$ such that
-$$
-d( (0,0),(x,y) ) <\delta \implies d(f(0,0),f(x,y))\geq \epsilon.
-$$
-Regardless of $\delta$, we just pick $x=y^2$, then
-$$
-d(f(0,0),f(x,y)) = \frac{y^4}{2y^4} = \frac{1}{2} \geq \epsilon.
-$$
-Hence $f$ is not continuous at $(0,0)$.
-\end{proof}
-
-\begin{itemize}
-\item The restrictions of both $f$ and $g$ to every straight line in $\mathbb{R}^2$ are continuous. 
-\end{itemize}
-\begin{proof}
-Since a straight line which doesn't pass through $(0,0)$ is always continuous trivially, then here we only prove the lines passing through $(0,0)$ are continuous.
-
-Consider the line $y = c x$ where $c$ is constant. Given $\epsilon>0$, we observe
-$$
-d((0,0), (x,y))
-= \sqrt{x^2+y^2} 
-= \sqrt{x^2 + c^2 x^2}
-= |x| \sqrt{c^2+1}
-< \delta.
-$$
-Put
-$$
-\delta = \frac{\sqrt{c^2+1}}{c^2}\epsilon.
-$$
-For $x\neq 0$, this implies
-$$
-d(f(0,0), f(x,y))
-= \left| \frac{x y^2}{x^2+y^4} \right|
-= \left| \frac{c^2 x^3}{x^2+c^4 x^4} \right|
-= \left| \frac{c^2 x}{1+c^4 x^2} \right|
-< |c^2 x|
-< c^2 \frac{\delta}{\sqrt{c^2+1}}
-= \epsilon.
-$$
-So $f$ is continuous on this line.
-
-Then we consider the line $x=0$. Given $\epsilon>0$, for $y\neq 0$, we observe
-$$
-d(f(0,0),f(x,y))
-= \left| \frac{x y^2}{x^2+y^4} \right|
-= \frac{0}{y^4}
-= 0
-< \epsilon
-$$
-regardless of the choice of $\delta$ such that $d((0,0),(x,y))<\delta$. Hence $f$ is continuous on this line.
-
-Finally, we conclude the restriction of $f$ to every straight line in $\mathbb{R}^2$ is continuous. A similar argument proves the restriction of $g$ to every straight line in $\mathbb{R}^2$ is also continuous.
-\end{proof}
+	\begin{itemize}
+		\item Prove that $f$ is bounded on $\mathbb{R}^2$.
+	\end{itemize}
+	\begin{proof}
+		For $(x,y) \neq (0,0)$, we consider $(x-y^2)^2 \geq 0$. Then
+		\begin{alignat*}{7}
+		\quad&& 0 &\leq \left| (x-y^2)^2 \right| \\
+		\implies&& 0 &\leq \left| x^2 - 2x y^2+ y^4 \right| \leq |x^2+y^4|+|2x y^2| \\
+		\implies&& \left| \frac{2 x y^2}{x^2+y^4} \right| &\leq 1 \\
+		\implies&& |f(x,y)| &\leq \frac{1}{2}
+		\end{alignat*}
+		Otherwise, for $(x,y)=(0,0)$, we have $|f(0,0)| = 0 \leq \frac{1}{2}$ trivially.
+		
+		Hence $f(x,y)$ is bounded by $\frac{1}{2}$.
+	\end{proof}
+	
+	\begin{itemize}
+		\item Prove that $g$ is unbounded in every neighborhood of $(0,0)$.
+	\end{itemize}
+	\begin{proof}
+		Let $x := t^3$ and $y := t$, we observe $\lim_{t\to 0} x = 0$ and $\lim_{t\to 0} y = 0$. Then for $t\neq 0$, we know $(x,y) \neq (0,0)$. Consider
+		$$
+		\lim_{t\to 0} g(x,y) = \lim_{t\to 0} g(t^3,t) = \lim_{t\to 0}\frac{1}{t} = \infty.
+		$$
+		Hence $g$ is unbounded in every neighborhood of $(0,0)$.
+	\end{proof}
+	
+	\begin{itemize}
+		\item Prove that $f$ is not continuous at $(0,0)$.
+	\end{itemize}
+	\begin{proof}
+		Given $\epsilon = \frac{1}{2}$, for $(x,y)\neq (0,0)$, there exists $\delta > 0$ such that
+		$$
+		d( (0,0),(x,y) ) <\delta \implies d(f(0,0),f(x,y))\geq \epsilon.
+		$$
+		Regardless of $\delta$, we just pick $x=y^2$, then
+		$$
+		d(f(0,0),f(x,y)) = \frac{y^4}{2y^4} = \frac{1}{2} \geq \epsilon.
+		$$
+		Hence $f$ is not continuous at $(0,0)$.
+	\end{proof}
+	
+	\begin{itemize}
+		\item The restrictions of both $f$ and $g$ to every straight line in $\mathbb{R}^2$ are continuous. 
+	\end{itemize}
+	\begin{proof}
+		Since a straight line which doesn't pass through $(0,0)$ is always continuous trivially, then here we only prove the lines passing through $(0,0)$ are continuous.
+		
+		Consider the line $y = c x$ where $c$ is constant. Given $\epsilon>0$, we observe
+		$$
+		d((0,0), (x,y))
+		= \sqrt{x^2+y^2} 
+		= \sqrt{x^2 + c^2 x^2}
+		= |x| \sqrt{c^2+1}
+		< \delta.
+		$$
+		Put
+		$$
+		\delta = \frac{\sqrt{c^2+1}}{c^2}\epsilon.
+		$$
+		For $x\neq 0$, this implies
+		$$
+		d(f(0,0), f(x,y))
+		= \left| \frac{x y^2}{x^2+y^4} \right|
+		= \left| \frac{c^2 x^3}{x^2+c^4 x^4} \right|
+		= \left| \frac{c^2 x}{1+c^4 x^2} \right|
+		< |c^2 x|
+		< c^2 \frac{\delta}{\sqrt{c^2+1}}
+		= \epsilon.
+		$$
+		So $f$ is continuous on this line.
+		
+		Then we consider the line $x=0$. Given $\epsilon>0$, for $y\neq 0$, we observe
+		$$
+		d(f(0,0),f(x,y))
+		= \left| \frac{x y^2}{x^2+y^4} \right|
+		= \frac{0}{y^4}
+		= 0
+		< \epsilon
+		$$
+		regardless of the choice of $\delta$ such that $d((0,0),(x,y))<\delta$. Hence $f$ is continuous on this line.
+		
+		Finally, we conclude the restriction of $f$ to every straight line in $\mathbb{R}^2$ is continuous. A similar argument proves the restriction of $g$ to every straight line in $\mathbb{R}^2$ is also continuous.
+	\end{proof}
 \end{Exercise}

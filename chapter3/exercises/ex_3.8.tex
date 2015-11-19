@@ -1,17 +1,17 @@
 % === Exercise 3.8 ===
 \begin{Exercise}
-\begin{proof}
-Let $\sum a_n$ converges to $a$. Since $\{b_n\}$ is monotonic and bounded, by Theorem 3.14, $\{b_n\}$ converges to $b\in\mathbb{R}$. Since $\sum a_n$ converges, then its partial sums form a bounded sequence.
-
-W.L.O.G., we assume $\{b_n\}$ is decreasing. Let $c_n := b_n-b$, then $\{c_n\}$ converges to $0$. By Theorem 3.42 (Dirichlet's Test), we obtain $\sum a_n c_n$ converges to $c\in\mathbb{R}$. Since
-$$
-\sum a_n c_n
-= \sum a_n (b_n-b)
-= \sum a_n b_n - b\sum a_n
-= \sum a_n b_n - b a,
-$$
-then $\sum a_n b_n$ converges to $c+b a$. A similar argument establishes $\sum a_n b_n$ converges when $\{b_n\}$ is increasing.
-
-Finally, we conclude $\sum a_n b_n$ converges.
-\end{proof}
+	\begin{proof}
+		Let $\sum a_n$ converges to $a$. Since $\{b_n\}$ is monotonic and bounded, by Theorem 3.14, $\{b_n\}$ converges to $b\in\mathbb{R}$. Since $\sum a_n$ converges, then its partial sums form a bounded sequence.
+		
+		Without loss of generality, we assume $\{b_n\}$ is decreasing. Let $c_n := b_n-b$, then $\{c_n\}$ converges to $0$. By Theorem 3.42 (Dirichlet's Test), we obtain $\sum a_n c_n$ converges to $c\in\mathbb{R}$. Since
+		$$
+		\sum a_n c_n
+		= \sum a_n (b_n-b)
+		= \sum a_n b_n - b\sum a_n
+		= \sum a_n b_n - b a,
+		$$
+		then $\sum a_n b_n$ converges to $c+b a$. A similar argument establishes $\sum a_n b_n$ converges when $\{b_n\}$ is increasing.
+		
+		Finally, we conclude $\sum a_n b_n$ converges.
+	\end{proof}
 \end{Exercise}

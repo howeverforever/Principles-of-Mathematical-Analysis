@@ -1,38 +1,38 @@
 % === Exercise 5.2 ===
 \begin{Exercise}
-\begin{itemize}
-\item Prove $f$ is strictly increasing in $(a,b)$.
-\end{itemize}
-\begin{proof}
-Since $f'(x) > 0$ in $(a,b)$, then $f$ is differentiable on $(a,b)$. 
-By the Mean Value Theorem, we consider
-$$
-f(x_1) - f(x_2) = (x_1 - x_2) f'(x)
-$$
-for $x_1,x_2\in (a,b)$. This implies
-$$
-f'(x) = \frac{f(x_1)-f(x_2)}{x_1-x_2} > 0.
-$$
-Then $x_1 > x_2$ if and only if $f(x_1) > f(x_2)$. This means $f$ is strictly increasing in $(a,b)$.
-\end{proof}
-\begin{itemize}
-\item Prove that $g$ is differentiable and the formula holds
-\end{itemize}
-\begin{proof}
-We have already known $f$ is strictly increasing in $(a,b)$, then $f$ is one-to-one and continuous on $(a,b)$. 
-Hence $g = f^{-1}$ exists and $g\big( f(x) \big) = x$ for all $x\in(a,b)$; also $f(x)\to f(c)$ as $x\to c$ where $c\in(a,b)$.
-
-Now we should prove $g$ is differentiable on $f(a,b)$ so that we can differentiate it over $x$ to get the formula.
-Consider
-$$
-f'(x) = \lim_{x\to c}\frac{f(x)-f(c)}{x-c}
-= \lim_{f(x)\to f(c)}\frac{f(x)-f(c)}{g\big( f(x) \big) - g\big( f(c) \big)}
-= \frac{1}{g'(f(x))}
-$$
-where $c\in(a,b)$. This conclude
-$$
-g'\big( f(x) \big) = \frac{1}{f'(x)}
-$$
-for $x\in(a,b)$.
-\end{proof}
+	\begin{itemize}
+		\item Prove $f$ is strictly increasing in $(a,b)$.
+	\end{itemize}
+	\begin{proof}
+		Since $f'(x) > 0$ in $(a,b)$, then $f$ is differentiable on $(a,b)$. 
+		By the Mean Value Theorem, we consider
+		$$
+		f(x_1) - f(x_2) = (x_1 - x_2) f'(x)
+		$$
+		for $x_1,x_2\in (a,b)$. This implies
+		$$
+		f'(x) = \frac{f(x_1)-f(x_2)}{x_1-x_2} > 0.
+		$$
+		Then $x_1 > x_2$ if and only if $f(x_1) > f(x_2)$. This means $f$ is strictly increasing in $(a,b)$.
+	\end{proof}
+	\begin{itemize}
+		\item Prove that $g$ is differentiable and the formula holds
+	\end{itemize}
+	\begin{proof}
+		We have already known $f$ is strictly increasing in $(a,b)$, then $f$ is one-to-one and continuous on $(a,b)$. 
+		Hence $g = f^{-1}$ exists and $g\big( f(x) \big) = x$ for all $x\in(a,b)$; also $f(x)\to f(c)$ as $x\to c$ where $c\in(a,b)$.
+		
+		Now we should prove $g$ is differentiable on $f(a,b)$ so that we can differentiate it over $x$ to get the formula.
+		Consider
+		$$
+		f'(x) = \lim_{x\to c}\frac{f(x)-f(c)}{x-c}
+		= \lim_{f(x)\to f(c)}\frac{f(x)-f(c)}{g\big( f(x) \big) - g\big( f(c) \big)}
+		= \frac{1}{g'(f(x))}
+		$$
+		where $c\in(a,b)$. This conclude
+		$$
+		g'\big( f(x) \big) = \frac{1}{f'(x)}
+		$$
+		for $x\in(a,b)$.
+	\end{proof}
 \end{Exercise}

@@ -1,16 +1,16 @@
 % === Exercise 2.12 ===
 \begin{Exercise}
-\begin{proof}
-Let $\{G_{\alpha}\}$ be arbitrary over cover of $K$, then $K\subset \bigcup_{\alpha}G_{\alpha}$.
-
-There is an open set $G_0 \in \{G_{\alpha}\}$ such that $0\in G_0$. Since $G_0$ is open, then $0\in (G_0)^{\circ}$. It follows that there is a neighborhood $N_r(0)$ such that $N_r(0)\subset G_0$ with $r>0$. Notice that $N_r(0)$ contains points $\frac{1}{n}\in K$ such that $\frac{1}{n}<r$. This implies that $N_r(0)$ contains points $\frac{1}{n}$ for all $n\in\mathbb{N}$ such that $n>\frac{1}{r}$.
-
-For which points are not contained in $N_r(0)$; that is, let $m := \lfloor \frac{1}{r} \rfloor$, then points $\frac{1}{i}$ for $i=1,2,\cdots,m$ are not contained in this neighborhood. We can pick $G_i\in \{G_{\alpha}\}$ containing the point $\frac{1}{i}$ for $1\leq i \leq m$ so that
-$$
-K\subset G_0\cup \left( \bigcup_{i=1}^{m}G_i \right) \subset \{G_{\alpha}\}.
-$$
-Notice that $m$ is finite, then we know there is a finite open subcover $G_0\cup \left( \bigcup_{i=1}^{m}G_i \right)$ of $G_{\alpha}$.
-
-By the arbitrary choice of $G_{\alpha}$, we know every open cover of $K$ contains a finite subcover; hence we conclude $K$ is compact.
-\end{proof}
+	\begin{proof}
+		Let $\{G_{\alpha}\}$ be arbitrary over cover of $K$, then $K\subset \bigcup_{\alpha}G_{\alpha}$.
+		
+		There is an open set $G_0 \in \{G_{\alpha}\}$ such that $0\in G_0$. Since $G_0$ is open, then $0\in (G_0)^{\circ}$. It follows that there is a neighborhood $N_r(0)$ such that $N_r(0)\subset G_0$ with $r>0$. Notice that $N_r(0)$ contains points $\frac{1}{n}\in K$ such that $\frac{1}{n}<r$. This implies that $N_r(0)$ contains points $\frac{1}{n}$ for all $n\in\mathbb{N}$ such that $n>\frac{1}{r}$.
+		
+		For which points are not contained in $N_r(0)$; that is, let $m := \lfloor \frac{1}{r} \rfloor$, then points $\frac{1}{i}$ for $i=1,2,\cdots,m$ are not contained in this neighborhood. We can pick $G_i\in \{G_{\alpha}\}$ containing the point $\frac{1}{i}$ for $1\leq i \leq m$ so that
+		$$
+		K\subset G_0\cup \left( \bigcup_{i=1}^{m}G_i \right) \subset \{G_{\alpha}\}.
+		$$
+		Notice that $m$ is finite, then we know there is a finite open subcover $G_0\cup \left( \bigcup_{i=1}^{m}G_i \right)$ of $G_{\alpha}$.
+		
+		By the arbitrary choice of $G_{\alpha}$, we know every open cover of $K$ contains a finite subcover; hence we conclude $K$ is compact.
+	\end{proof}
 \end{Exercise}
