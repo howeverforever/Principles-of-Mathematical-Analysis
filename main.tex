@@ -12,6 +12,9 @@
 \usepackage{mathrsfs}
 \usetikzlibrary{arrows}
 
+\usepackage[bookmarks=true]{hyperref}
+\usepackage{bookmark}
+
 \usepackage{graphicx}
 \usepackage{epstopdf}
 \usepackage{caption}
@@ -25,48 +28,15 @@
 \usepackage{exercise,chngcntr}
 
 % === Environment Settings ===
-
-\let\oldproofname=\proofname
-\renewcommand{\proofname}{\rm\bf{\oldproofname}}
-  
-\newenvironment{solution}
-  {\begin{proof}[$\mathbf{Solution}$]}
-  {\end{proof}}
-  
-\newenvironment{sketch}
-  {\begin{proof}[$\mathbf{Sketch}$]}
-  {\end{proof}}
-
-\newenvironment{answer}
-  {\begin{proof}[$\mathbf{Answer}$]\renewcommand{\qedsymbol}{}}
-  {\end{proof}}
-
-\newtheorem{theorem}{Theorem}[chapter]
-\newtheorem{lemma}[theorem]{Lemma}
-
-\pagestyle{fancy}
-\fancyhf{}
-\rhead{\rightmark}
-\rfoot{\thepage}
-
-\renewcommand{\dateseparator}{/}
-\renewcommand{\qedsymbol}{$\blacksquare$}
-
-\def\upint{\mathchoice%
-    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}
-    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
-    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
-    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
-  \int}
-\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+\include{style}
+\include{config}
 % === -------------------- ===
 
 \begin{document}
 \counterwithin{Exercise}{chapter}
-% === Math Font Setup ===
-$\mathbb{}$
 
 % === Cover Page ===
+\include{cover}
 
 % === Contents Pages ===
 \pagenumbering{roman}
@@ -80,6 +50,7 @@ $\mathbb{}$
 \tableofcontents
 
 % === Preface ===
+\include{abstract}
 \newpage
 
 % === Main Pages ===
