@@ -1,0 +1,65 @@
+\documentclass{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{natbib}
+\usepackage{mathpazo}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+\usepackage[bookmarks=true]{hyperref}
+\usepackage{bookmark}
+
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{caption}
+
+\usepackage{titletoc}
+\usepackage{import}
+\usepackage[yyyymmdd]{datetime}
+
+\usepackage{enumerate}
+\usepackage{type1cm}
+\usepackage{exercise,chngcntr}
+
+% === Environment Settings ===
+\include{style}
+\include{config}
+% === -------------------- ===
+
+\begin{document}
+\counterwithin{Exercise}{chapter}
+
+% === Cover Page ===
+\include{cover}
+
+% === Contents Pages ===
+\pagenumbering{roman}
+
+\titlecontents{chapter}
+  [0pt]
+  {\addvspace{1em}}
+  {\bfseries\chaptername\ \thecontentslabel\quad}
+  {}
+  {\bfseries\hfill\contentspage}
+\tableofcontents
+
+% === Preface ===
+\include{abstract}
+\newpage
+
+% === Main Pages ===
+\newpage
+\pagenumbering{arabic}
+\subimport*{chapter2/}{chapter2}
+\subimport*{chapter3/}{chapter3}
+\subimport*{chapter4/}{chapter4}
+\subimport*{chapter5/}{chapter5}
+\subimport*{chapter6/}{chapter6}
+
+\end{document}

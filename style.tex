@@ -1,0 +1,15 @@
+% === Custom Chapter Style ===$
+\usepackage{fncychap}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\rightmark}
+\rfoot{\thepage}
+\fancypagestyle{plain}{
+  \fancyhf[]{}
+  \fancyhead[LO,RE]{\slshape \leftmark}
+  \fancyfoot[RO]{\thepage}
+}
+
+\ChNumVar{\fontsize{76}{80}\usefont{OT1}{pzc}{m}{n}\selectfont}
+\ChTitleVar{\raggedleft\Large\sffamily\bfseries}

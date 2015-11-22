@@ -1,0 +1,27 @@
+% === Exercise 3.7 ===
+\begin{Exercise}
+	\begin{proof}
+		Notice that $a_n\geq 0$. By Cauchy-Schwarz Inequality, consider
+		\begin{align*}
+		\left| \sum_{n=1}^{m} \frac{\sqrt{a_n}}{n} \right|^2
+		&\leq 
+		\left( \sum_{n=1}^{m} \left| \sqrt{a_n} \right|^2 \right)
+		\left( \sum_{n=1}^{m} \left| \frac{1}{n} \right|^2 \right) \\
+		&= \left( \sum_{n=1}^{m} a_n \right) \left( \sum_{n=1}^{m} \frac{1}{n^2} \right)
+		\end{align*}
+		where $m\in\mathbb{N}$. By hypothesis, we know $\sum_{n=1}^{\infty} a_n < \infty$; also by the p-Series Test (Theorem 3.28), we know $\sum_{n=1}^{\infty} \frac{1}{n^2} < \infty$. Hence 
+		$$
+		\sum_{n=1}^{m} a_n<\infty\text{, and }\sum_{n=1}^{m} \frac{1}{n^2} < \infty.
+		$$
+		It follows that
+		$$
+		\left| \sum_{n=1}^{m} \frac{\sqrt{a_n}}{n} \right|^2 < \infty
+		$$
+		implies
+		$$
+		\left| \sum_{n=1}^{m} \frac{\sqrt{a_n}}{n} \right| < \infty.
+		$$
+		
+		Since its partial sums $S_m = \sum_{n=1}^{m} \frac{\sqrt{a_n}}{n}$ form a bounded sequence, by Theorem 3.24, we conclude $\sum \frac{\sqrt{a_n}}{n}$ converges.
+	\end{proof}
+\end{Exercise}

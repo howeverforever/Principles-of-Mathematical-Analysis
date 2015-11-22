@@ -1,0 +1,80 @@
+% === Exercise 6.7 ===
+\begin{Exercise}
+	\begin{enumerate}[(a)]
+%		=== Part(a) ===
+		\item 
+		\begin{proof}
+			Since $f\in\mathfrak{R}$ on $[0,1]$, then $|f(x)| \leq M$ for all $x\in[0,1]$ where $M>0$.
+			Consider
+			$$
+			\int_{0}^{1} f(x)\,dx = \int_{0}^{c}f(x)\, dx + \int_{c}^{1}f(x)\,dx.
+			$$
+			This implies that
+			$$
+			\left| \int_{0}^{1} f(x)\,dx - \int_{c}^{1}f(x)\,dx \right|
+			= \left| \int_{0}^{c}f(x)\, dx \right|
+			\leq \int_{0}^{c} |f(x)|\, dx
+			\leq cM.
+			$$
+			Since $cM\to 0$ as $c \to 0$, we conclude
+			$$
+			\int_{0}^{1} f(x)\, dx = \lim_{c\to 0}\int_{c}^{1}f(x)\, dx.
+			$$
+		\end{proof}
+		
+% ============================
+% !!! Is f integrable on [c,1]?
+% ============================
+%		=== Part(b) ===
+		\item
+		\begin{answer}
+			\begin{equation}
+			f(x) = n(-1)^{n+1} \quad\mbox{ for } \frac{1}{n+1} < x \leq \frac{1}{n}. \label{eq:ex_6.7b}
+			\end{equation}
+		\end{answer}
+		\begin{proof}
+			Consider \eqref{eq:ex_6.7b}.
+			Since $c\in(0,1]$, there exists an index $N$ such that
+			$$
+			\frac{1}{N+1} < c \leq \frac{1}{N}.
+			$$
+			Since
+			$$
+			0
+			\leq \frac{1}{N} - c 
+			\leq \frac{1}{N} - \frac{1}{N+1}
+			= \frac{1}{N(N+1)},
+			$$
+			we observe
+			\begin{align*}
+			\int_{c}^{1} f(x)\, dx
+			&= N(-1)^{N+1}\left( \frac{1}{N} - c \right) + \sum_{i=1}^{N-1} \frac{(-1)^{i+1}}{i} \\
+			&\leq \sum_{i=1}^{N} \frac{(-1)^{i+1}}{i}.
+			\end{align*}
+			This is the famous alternating harmonic series, we know
+			$$
+			\lim_{N\to\infty} \int_{c}^{1} f(x)\, dx
+			\leq \lim_{N\to\infty} \sum_{i=1}^{N} \frac{(-1)^{i+1}}{i}
+			= \ln 2
+			$$
+			Notice that $c\to 0$ as $N\to\infty$ by the Squeeze Theorem.
+			Hence we have
+			$$
+			\lim_{c\to 0} \int_{c}^{1} f(x)\, dx = \ln 2.
+			$$
+			
+			On the other hand, we observe
+			
+			% ??? This is incredible.
+			\begin{align*}
+			\int_{c}^{1} |f(x)|\, dx
+			&= N \left( \frac{1}{N} - c \right) + \sum_{i=1}^{N-1} \frac{1}{i} \to \infty \text{ as } N\to\infty
+			\end{align*}
+			By the Comparison Test, we know
+			$$
+			\lim_{c\to 0} \int_{c}^{1} |f(x)|\, dx
+			$$
+			diverges.
+		\end{proof}
+	\end{enumerate}
+\end{Exercise}

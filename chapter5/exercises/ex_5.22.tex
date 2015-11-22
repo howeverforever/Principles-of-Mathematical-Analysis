@@ -1,0 +1,94 @@
+% === Exercise 5.22 ===
+\begin{Exercise}
+	\begin{enumerate}[(a)]
+		\item 
+		\begin{proof}
+			Suppose to contrary that $f$ has more than one fixed point, says $x_1$, $x_2$.
+			Notice that $x_1\neq x_2$.
+			Then by Mean Value Theorem, we consider
+			$$
+			f'(t) = \frac{f(x_1)-f(x_2)}{x_1-x_2}
+			= \frac{x_1-x_2}{x_1-x_2}
+			=1
+			$$
+			where $t\in (x_1,x_2)$.
+			This contradicts $f'(t) \neq 1$ for all $t$.
+			Hence $f$ has at most one fixed point.
+		\end{proof}
+		
+		\item
+		\begin{proof}
+			We observe
+			$$
+			f'(t) = 1-\frac{e^t}{(1+e^t)^2}.
+			$$
+			This means $0<f'(t)<1$ for all $t$.
+			Suppose to contrary there exists a fixed point $t_0\in\mathbb{R}$ such that $f(t_0) = t_0$.
+			Then $f(t_0) = t_0 + (1+e^t_0)^{-1}$ implies $e^{t_0} = 0$.
+			There is no $t_0\in\mathbb{R}$ satisfied so is a contradiction.
+			It follows that $f$ has no fixed point.
+		\end{proof}
+		
+		\item
+		\begin{proof}
+			Since $|f'(t)| \leq A$ for all $t$, then
+			$$
+			\left| \frac{f(x_{n+1})-f(x_n)}{x_{n+1}-x_n} \right | \leq A
+			$$
+			which implies
+			$$
+			\left| f(x_{n+1})-f(x_n) \right| \leq A \left| x_{n+1}-x_n \right|.
+			$$
+			This inequality holds for all $n\in\mathbb{N}$. By induction, we have
+			$$
+			|f(x_{n+1})-f(x_n)| \leq A^n | x_2-x_1 |.
+			$$
+			Notice that $A < 1$, for $k > 0$, we consider
+			\begin{align*}
+			| x_{n+k} - x_n |
+			&\leq |x_{n+k}-x_{n+k-1}| + |x_{n+k-1}-x_{n+k-2}| + \cdots + | x_2 - x_1 | \\
+			&= A^{n+k-2} |x_2-x_1| + A^{n+k-3} |x_2-x_1| + \cdots + A^{n-1} |x_2 - x_1| \\
+			&\leq k A^{n-1} | x_2-x_1 |.
+			\end{align*}
+			Taking the limit on both sides as $n\to\infty$, we have
+			$$
+			\lim_{n\to\infty} |x_{n+k}-x_n| \leq 0.
+			$$
+			Hence $\lim_{n\to\infty}|x_{n+k}-x_n| = 0$, it follows that the sequence $\{x_k\}$ is Cauchy.
+			Since $\mathbb{R}$ is compact, then by Theorem 3.11(b), we know there is $x\in\mathbb{R}$ such that 
+			$$
+			\lim_{n\to\infty} x_n = x.
+			$$
+			Moreover, by definition of $f(x_n)$, we also have 
+			$$
+			\lim_{n\to\infty} f(x_n) = x.
+			$$
+			Since $f'(t)$ exists for all $t\in\mathbb{R}$ by hypothesis, then $f$ is continuous on $\mathbb{R}$, we conclude
+			$$
+			f(x) = x
+			$$
+			which means $x$ is a fixed point of $f$.
+		\end{proof}
+		
+		\item
+		\begin{solution}
+			Consider the points $\big(x_n, f(x_n)\big)$.
+			We know when $n\to\infty$, the point must be a fixed point $(x, x)$.
+			If we start with $\big(x_1, f(x_1)\big)$, then we want to arrive at $\big(x_2, f(x_2)\big)$. We just pick the path
+			$$
+			\big(x_1, f(x_1)\big) \to \big(x_2, f(x_1)\big) \to \big(x_2, f(x_2)\big)
+			$$
+			which means
+			$$
+			\big(x_1, x_2\big) \to \big(x_2, x_2\big) \to \big(x_2, x_3\big).
+			$$
+			Then we arrive at $\big(x_3, f(x_3)\big)$, which means
+			
+			$$
+			\big(x_2, x_3\big) \to \big(x_3, x_3\big) \to \big(x_3, x_4\big).
+			$$
+			This process continue until we arrive at the fixed point.
+			By induction, we obtain the zig-zag path.
+		\end{solution}
+	\end{enumerate}
+\end{Exercise}

@@ -1,0 +1,44 @@
+% === Exercise 6.5 ===
+\begin{Exercise}
+	\begin{itemize}
+		\item Does it follow that $f\in\mathfrak{R}$ if $f^2\in\mathfrak{R}$?
+	\end{itemize}
+	\begin{answer}
+		No.
+	\end{answer}
+	\begin{proof}
+		Consider
+		$$
+		f(x) = \begin{cases}
+		1 & \mbox{for } x\in\mathbb{Q} \\
+		-1 & \mbox{otherwise} 
+		\end{cases}.
+		$$
+		A similar argument from Exercise 6.4 proves $f\notin\mathfrak{R}$.
+		However, 
+		$$
+		f^2(x) = 1
+		$$
+		for all $x\in\mathbb{R}$ shows $f^2\in\mathfrak{R}$ on $[a,b]$ trivially.
+	\end{proof}
+	
+	\begin{itemize}
+		\item Does it follow that $f\in\mathfrak{R}$ if $f^3\in\mathfrak{R}$?
+	\end{itemize}
+	\begin{answer}
+		Yes.
+	\end{answer}
+	\begin{proof}
+		Since $f$ is bounded by hypothesis, we can suppose $m \leq f \leq M$ for some $m,M\in\mathbb{R}$.
+		Define a function $\phi$ by
+		$$
+		\phi(x) = \sqrt[3]{f(x)}.
+		$$
+		We can easily see that $\phi$ is continuous on $\mathbb{R}$ so is on $[m,M]$.
+		Since
+		$$
+		f(x) = \phi\big( f^3(x) \big)
+		$$
+		for all $x\in[a,b]$, by Theorem 6.11, it follows that $f\in\mathfrak{R}$ on $[a,b]$.
+	\end{proof}
+\end{Exercise}

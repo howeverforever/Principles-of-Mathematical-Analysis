@@ -1,0 +1,38 @@
+% === Exercise 4.4 ===
+\begin{Exercise}
+	\begin{itemize}
+		\item Prove that $f(E)$ is dense in $f(X)$.
+	\end{itemize}
+	\begin{proof}
+		Let $y := f(x)$ arbitrarily, then we know $x\in E$ or $x\in E'$ by hypothesis that $E$ is dense. It suffices to prove $y\in f(E)$ or $y\in f(E)'$ so that $f(E)$ is dense in $f(X)$.
+		
+		if $x\in E$, then $y=f(x)\in f(E)$. Otherwise, if $x\in E'$, then there exists a sequence $\{x_n\}$ in $E$ such that $\lim_{n\to\infty} x_n = x$ and $x_n \neq x$. Since $f$ is continuous, by Theorem 4.2, we observe $\lim_{n\to\infty} f(x_n) = f(x)$. This means there exists a sequence $\{f(x_n)\}$ in $f(E)$ such that $\lim_{n\to\infty} f(x_n) = f(x) = y$ and hence we know $y\in f(E)'$.
+		
+		In either of two cases, we have $y\in f(E)$ or $y\in f(E)'$. Because $y$ was arbitrary, we conclude $f(E)$ is dense in $f(X)$.
+	\end{proof}
+	
+	\begin{itemize}
+		\item Prove that $g(p) = f(p)$ for all $p\in X$.
+	\end{itemize}
+	\begin{proof}
+		By hypothesis, we suppose $g(q) = f(q)$ for all $q\in E$. Given $\epsilon>0$. Let $p\in X$ arbitrarily. Since $f$ is continuous on $X$ and $E\subseteq X$, then $f$ is continuous at $q\in E$. There exists $\delta_1>0$ such that
+		$$
+		d(p,q)<\delta_1 \implies d(f(p),f(q))<\frac{\epsilon}{2}.
+		$$
+		
+		A similar argument establishes $g$ is also continuous at $q$, then there exists $\delta_2>0$ such that
+		$$
+		d(p,q)<\delta_2 \implies d(g(p),g(q))<\frac{\epsilon}{2}.
+		$$
+		
+		They follow that
+		\begin{align*}
+		d(f(p),g(p))
+		&\leq d(f(p), f(q)) + d(f(q), g(q)) + d(g(q), g(p)) \\
+		&< \frac{\epsilon}{2} + 0 + \frac{\epsilon}{2} \\
+		&= \epsilon.
+		\end{align*}
+		
+		This holds for any $\epsilon>0$, then we know $f(p)=g(p)$. Since $p$ was arbitrary, we conclude $f(p)=q(p)$ for all $p\in X$.
+	\end{proof}
+\end{Exercise}

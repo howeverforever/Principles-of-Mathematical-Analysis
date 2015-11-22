@@ -1,0 +1,47 @@
+% === Exercise 2.15 ===
+\begin{Exercise}
+	\begin{itemize}
+		\item $\mathbf{The\ term\ is\ replaced\ by\ "closed"}$.
+	\end{itemize}
+	\begin{proof}
+		Let $C_n := \left\{m\geq n:m\in\mathbb{N}\right\}$ which is closed for each $n\in\mathbb{N}$ since $C_n$ has no limit points; therefore every limit point of $C_n$ is in $C_n$ vacuously. Consider any finite subcollection $\{C_i\}_{i\in I}$ of $\{C_n\}$ where $I\subset \mathbb{N}$ and $|I|$ is finite.
+		
+		Suppose to contrary that
+		$$
+		\bigcap_{n=1}^{\infty} C_n \neq \emptyset.
+		$$
+		Then this implies
+		$$
+		\bigcap_{i\in I} C_i \neq \emptyset.
+		$$
+		Now pick $r = \max_{i\in I}\{i\}$ where $r\in\mathbb{N}$, then $r\in C_i$ for all $i\in I$ and so $r\in \bigcap_{i\in I}C_i$. We can choose $k\in\mathbb{N}$ such that $k>r$, then $r\notin C_k$ and so
+		$$
+		r \notin \bigcap_{n=1}^{\infty}C_n.
+		$$
+		
+		We conclude the statement is false.
+	\end{proof}
+	
+	\begin{itemize}
+		\item $\mathbf{The\ term\ is\ replaced\ by\ "bounded"}$.
+	\end{itemize}
+	\begin{proof}
+		Let $B_n := \left(0,\frac{1}{n}\right)$ which is bounded for each $n\in\mathbb{N}$. Consider any finite subcollection $\{B_i\}_{i\in I}$ of $\{B_n\}$ where $I\subset \mathbb{N}$ and $|I|$ is finite.
+		
+		Suppose to contrary that
+		$$
+		\bigcap_{n=1}^{\infty} B_n \neq \emptyset.
+		$$
+		Then this implies
+		$$
+		\bigcap_{i\in I} B_i \neq \emptyset.
+		$$
+		Now pick $n = \min_{i\in I}\{i\}$. By Archimedean property, there is $r\in\mathbb{R}$ such that $n r > 1$. This means $r>\frac{1}{n}$ and hence $r\notin\left(0, \frac{1}{n} \right)$ implies
+		$$
+		r\notin \bigcap_{n=1}^{\infty} B_n.
+		$$
+		So this contradicts the supposition.
+		
+		We conclude the statement is false.
+	\end{proof}
+\end{Exercise}

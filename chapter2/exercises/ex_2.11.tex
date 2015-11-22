@@ -1,0 +1,66 @@
+% === Exercise 2.11 ===
+\begin{Exercise}
+	\begin{answer}
+		$d_2$, $d_5$ $\mathbf{are}$ metrics.
+		$d_1$, $d_3$, $d_4$ $\mathbf{are\ not}$ metrics.
+	\end{answer}
+	\begin{solution}
+		In order to determine whether these functions are metric or not, the verification is similar to Exercise 2.10. Here we only show something nontrivial. Notice that we suppose $z\in\mathbb{R}^1$.
+		
+		\begin{itemize}
+			\item $\mathbf{d_1\ violates\ the\ Triangle\ Inequality \ property}$
+			
+			Pick $x=4$, $y=0$, $z=1$. Then
+			\begin{alignat*}{7}
+			\quad&& d_1(x,y) &\leq d_1(x,z) + d_1(z,y) \\
+			\implies&& (x-y)^2 &\leq (x-z)^2 + (z-y)^2 \\
+			\implies&& 16 &\leq 9 + 1.
+			\end{alignat*}
+			This is a contradiction.
+			
+			\item $\mathbf{d_2\ obeys\ the\ Triangle\ Inequality\ property}$
+			
+			\begin{alignat*}{7}
+			\quad&& |x-y| &\leq |x-z| + |z-y| \\
+			\implies&& |x-y| &\leq |x-z| + |z-y| + 2\sqrt{|x-z| |z-y|} \\
+			\implies&& \sqrt{|x-y|}^2 &\leq \left( \sqrt{|x-z|} + \sqrt{|z-y|} \right)^2 \\
+			\implies&& \sqrt{|x-y|} &\leq \sqrt{|x-z|} + \sqrt{|z-y|} \\
+			\implies&& d_2(x,y) &\leq d_2(x,z) + d_2(z,y).
+			\end{alignat*}
+			This implies what we need to show.
+			
+			\item $\mathbf{d_3\ violates\ the\ Positive\ Definite\ property}$
+			
+			Pick $x=1$, $y=-1$, then $d_3(x,y) = 0$ with $x\neq y$.
+			
+			\item $\mathbf{d_4\ violates\ the\ Symmetry\ property}$
+			
+			Pick $x=0$, $y=1$, then
+			$$
+			d_4(x,y) = |x-2y| = 2 \neq 1 = |y-2x| = d_4(y,x).
+			$$
+			
+			\item $\mathbf{d_5\ obeys\ the\ Triangle\ Inequality\ property}$
+			
+			Consider
+			$$
+			|x-y| \leq |x-z| + |z-y|.
+			$$
+			Add $|x-z| |x-y| + |x-z| |z-y| + |x-z| |z-y| + |x-z| |x-y| |z-y|$ on both sides, then
+			$$
+			|x-y|(1+|x-z|)(1+|z-y|) \leq |x-z|(1+|x-y|)(1+|z-y|) + |z-y| + |x-z| |z-y|.
+			$$
+			Add $|z-y| |x-y| + |z-y| |x-y| |x-z|$ on the right side, then
+			\begin{align*}
+			|x-y|(1+|x-z|)(1+|z-y|) 
+			\leq& |x-z|(1+|x-y|)(1+|z-y|) \\
+			\quad& +|z-y|(1+|x-y|)(1+|x-z|).
+			\end{align*}
+			This implies
+			$$
+			\frac{|x-y|}{1+|x-y|} \leq \frac{|x-z|}{1+|x-z|} + \frac{|z-y|}{1+|z-y|}.
+			$$
+			We obtain $d_5(x,y) \leq d_5(x,z) + d_5(z,y)$ as promised.
+		\end{itemize}
+	\end{solution}
+\end{Exercise}

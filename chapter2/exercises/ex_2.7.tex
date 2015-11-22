@@ -1,0 +1,90 @@
+% === Exercise 2.7 ===
+\begin{Exercise}
+	\begin{lemma}\label{lemma:ex_2.7a}
+		Let $E,F,G$ be subsets of a metric space. 
+		If $E=F\cup G$, then $\overline{E} \subseteq \overline{F}\cup\overline{G}$.
+	\end{lemma}
+	\begin{proof}
+		Let $x\in\overline{E}$, then $x\in E$ or $x\in E'$.
+		
+		If $x\in E$, then $x\in F$ or $x\in G$ imply $x\in\overline{F}$ or $x\in\overline{G}$, respectively.
+		In either of two cases, we know $x\in \overline{F}\cup\overline{G}$.
+		
+		Otherwise, if $x\in E'$, then $x\in F'$ or $x\in G'$. 
+		Suppose to contrary that $x\notin F'\cap G'$.
+		Pick arbitrarily small radius $s$ and $t$ such that there is no point of $F$ in the neighborhood $N_s(x)$, and there is no point of $G$ in the neighborhood $N_t(x)$. 
+		Let $r := \min\{s,t\}$, since $N_r(x)\subseteq N_s(x)$ and $N_r(x)\subseteq N_t(x)$, then $N_r(x)$ contains no points of $F\cup G = E$. 
+		This contradicts the supposition that $x\in E'$. 
+		Hence $x\in F'$ or $x\in G'$. 
+		These imply $x\in \overline{F}$ or $x\in \overline{G}$, respectively. 
+		In either of two cases, we know $x\in \overline{F}\cup \overline{G}$.
+		
+		Finally, no matter $x\in E$ or $x\in E'$, we know $x\in \overline{F}\cup \overline{G}$ always holds; hence we conclude $\overline{E} \subseteq \overline{F}\cup \overline{G}$.
+	\end{proof}
+	
+	\begin{lemma}\label{lemma:ex_2.7b}
+		Let $E,F,G$ be subsets of a metric space. 
+		If $E=F\cup G$, then $\overline{E} \supseteq \overline{F}\cup\overline{G}$.
+	\end{lemma}
+	\begin{proof}
+		Let $x\in \overline{F}\cup \overline{G}$, then $x\in \overline{F}$ or $x\in \overline{G}$. 
+		In particular, $x\in F$ or $x\in F'$ or $x\in G$ or $x\in G'$.
+		
+		If $x\in F$ or $x\in G$, then $x\in F\cup G$; hence $x\in \overline{F\cup G}$. This implies $x\in \overline{E}$.
+		
+		Otherwise, if $x\in F'$ or $x\in G'$, then every neighborhood of $x$ contains an element of $F$ or $G$. 
+		Moreover, every element of $F$ or $G$ is an element of $F\cup G = E$. 
+		By definition, we see that $x\in E'$. 
+		Since $E' \subseteq E\cup E' = \overline{E}$, we have $x\in \overline{E}$.
+		
+		Finally, in either of cases, we always know $x\in \overline{E}$; hence we conclude $\overline{E} \supseteq \overline{F}\cup\overline{G}$.
+	\end{proof}
+	\begin{enumerate}[a)]
+		\item
+		\begin{proof}
+			By Lemma \ref{lemma:ex_2.7a} and Lemma \ref{lemma:ex_2.7b}, we know $\overline{E} = \overline{F}\cup\overline{G}$.
+			
+			For $n=1$, if $B_1 = A_1$, then $\overline{B_1} = \overline{A_1}$ holds.
+			
+			Suppose for $n=k$, 
+			$$
+			B_k = \bigcup_{i=1}^{k}A_i \implies \overline{B_k} = \bigcup_{i=1}^{k}\overline{A_i}.
+			$$
+			Then for $n=k+1$, if $B_{k+1} = \bigcup_{i=1}^{k+1}A_i$, then we have
+			\begin{align*}
+			\overline{B_{k+1}}
+			&= \overline{\cup_{i=1}^{k+1}A_i} \\
+			&= \overline{\left( \cup_{i=1}^{k}A_i \right) \cup A_{k+1}} \\
+			&= \overline{\cup_{i=1}^{k}A_i} \cup \overline{A_{k+1}} \\
+			&= \overline{B_k} \cup \overline{A_{k+1}} \\
+			&= \left( \cup_{i=1}^{k}\overline{A_i} \right) \cup \overline{A_{k+1}} \\
+			&= \cup_{i=1}^{k+1}\overline{A_i}
+			\end{align*}
+			also holds. 
+			
+			By induction, we conclude the formula holds for all $n\in\mathbb{N}$.
+		\end{proof}
+		
+		\item
+		\begin{proof}
+			From Lemma \ref{lemma:ex_2.7a}, when we pick $r$ which is the minimum radius among all the candidates, $r$ exists if and only if the amount of candidates is finite. However, since $n=\infty$ which means candidates are infinite, then $r$ doesn't exist.
+			
+			On the other hand, from Lemma \ref{lemma:ex_2.7b}, it doesn't matter $n$ is finite or infinite; hence a similar argument from part a) establishes
+			$$
+			\overline{B} \supseteq \bigcup_{i=1}^{\infty}\overline{A_i}.
+			$$
+			
+			\begin{itemize}
+				\item $\mathbf{Claim:this\ inclusion\ can\ be\ proper.}$
+			\end{itemize}
+			
+			For example, from Exercise 2.5, we let $A_i = \left\{ 1+\frac{1}{i+1} \right\}$ for all $i\in\mathbb{N}$ and $B=\cup_{i=1}^{\infty} A_i$. It follows that $\cup_{i=1}^{\infty}\overline{A_i} = \emptyset$ and $\overline{B} = \{1\}$; hence $\overline{B} \neq \bigcup_{i=1}^{\infty}\overline{A_i}$.
+			
+			We conclude
+			$$
+			\overline{B} \supset \bigcup_{i=1}^{\infty}\overline{A_i}
+			$$
+			might occur, so this claim holds; furthermore, we complete the proof.
+		\end{proof}
+	\end{enumerate}
+\end{Exercise}

@@ -1,0 +1,26 @@
+% === Exercise 2.22 ===
+\begin{Exercise}
+	\begin{proof}
+		Follow the hint. It is clear that $\mathbb{Q}^k\subset\mathbb{R}^k$. By Theorem 2.13 and its corollary, we know $\mathbb{Q}^k$ is countable. Now we need to prove $\mathbb{Q}^K$ is dense in $\mathbb{R}^k$.
+		
+		Let $a = (a_1,\cdots, a_k)$ be an arbitrary point in $\mathbb{R}^k$. Pick a radius $r > 0$ arbitrarily. Let $b = (b_1,\cdots, b_k)$ where $b_i\in\mathbb{Q}^k$ such that
+		$$
+		a_i < b_i < a_i+\frac{r}{\sqrt{k}}
+		$$
+		for each $i$. Then we know
+		$$
+		d(a,b)
+		= \|a - b \| 
+		= \sqrt{\sum_{i=1}^{k} (a_i-b_i)^2} 
+		< \sqrt{\sum_{i=1}^{k} \left( \frac{r}{\sqrt{k}} \right)^2} \ 
+		= \sqrt{k\cdot\frac{r^2}{k}}  
+		= |r|
+		= r.
+		$$
+		This means there is $b\in\mathbb{Q}^k$ in the neighborhood $N_r(a)$. Since $r$ was arbitrary, then $a$ is a limit point of $\mathbb{Q}^k$.
+		
+		By the arbitrary choice of $a$, we know every point in $\mathbb{R}^k$ is a limit of $\mathbb{Q}^k$. So $\mathbb{Q}^k$ is dense.
+		
+		Since $\mathbb{R}^k$ contains a countable dense subset $\mathbb{Q}^k$, we conclude $\mathbb{R}^k$ is separable.
+	\end{proof}
+\end{Exercise}

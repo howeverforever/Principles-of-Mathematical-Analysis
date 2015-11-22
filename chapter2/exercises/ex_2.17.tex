@@ -1,0 +1,81 @@
+% === Exercise 2.17 ===
+\begin{Exercise}
+	\begin{itemize}
+		\item $\mathbf{Is\ E\ countable?}$
+	\end{itemize}
+	\begin{answer}
+		No.
+	\end{answer}
+	\begin{proof}
+		Suppose to contrary that $E$ is countable. Let $A$ be a countable subset of $E$, and $A$ consist of the sequences $s_1, s_2, \cdots$. We construct a sequence $s$ as follows.
+		
+		If $n$-th digit of $s_n$ is $4$, then we set $n$-th digit of $s$ as $7$, and vice versa. We know $s$ differs from every number of $A$ in at least one place; hence $s\notin A$. However $s\in E$ so that $A\subset E$.
+		
+		We have shown that every countable subset of $E$ is a proper subset $E$, then $E\subset E$ is a contradiction; hence we conclude $E$ is uncountable.
+	\end{proof}
+	
+	\begin{itemize}
+		\item $\mathbf{Is\ E\ dense\ in\ [0,1]?}$
+	\end{itemize}
+	\begin{answer}
+		No.
+	\end{answer}
+	\begin{proof}
+		Let $x := 0.22$. Pick $r = 0.1 > 0$, then we know $N_r(x) = (0.21, 0.23)$. For any element $y\in N_r(x)$, it implies $y\notin E$, then $x\notin E'$. And $x\notin E$ trivially; however $x\in [0,1]$. So we find an element (e.g. $0.22$) in $[0,1]$ is neither a point of $E$ nor a limit point of $E$.
+		
+		As a result, we conclude $E$ is not dense.
+	\end{proof}
+	
+	\begin{itemize}
+		\item $\mathbf{Is\ E\ compact?}$
+	\end{itemize}
+	\begin{answer}
+		Yes.
+	\end{answer}
+	\begin{proof}
+		Notice that $E\subset \mathbb{R}^1$, then $E$ is compact if and only if $E$ is bounded and closed.
+		
+		Since $E\subset[0,1]$, then for any $e\in E$, we know $|e| \leq 1$ and hence $E$ is bounded by $1$.
+		
+		Now we claim $E$ is closed. This means every limit point of $E$ is a member of $E$, so is equivalent to that every member which is not a member of $E$ is not a limit point of $E$.
+		
+		Let $x\in[0,1]\setminus E$. Since $x\notin E$, in particular, we let
+		$$
+		x := 0.a_1 a_2 a_3 \cdots
+		$$
+		where $a_i\notin \{4,7\}$ for some $i$. Now let $k$ be any index such that $a_k\notin\{4,7\}$. Pick $r = \frac{1}{10^{k+1}}$, then we consider three cases.
+		
+		\begin{enumerate}
+			\item $0 < a_k < 9$.
+			
+			The ($k$+$1$)-st decimal place will be $a_k$ for every element of $N_r(x)$ and so no element of $N_r(x)$ is a member of $E$.
+			
+			\item $a_k = 0$.
+			
+			The ($k$+$1$)-st decimal place will be $9$, $0$, or $1$ for every element of $N_r(x)$ and so no element of $N_r(x)$ is a member of $E$.
+			
+			\item $a_k = 9$.
+			
+			The ($k$+$1$)-st decimal place will be $8$, $9$, or $0$ for every element of $N_r(x)$ and so no element of $N_r(x)$ is a member of $E$.
+		\end{enumerate}
+		Hence $N_r(x)$ contains no points in $E$. This means $x\notin E'$.
+		
+		By the arbitrary choice of $x$, every member which is not a member of $E$ is not a limit point of $E$. It follows that $E$ is compact.
+	\end{proof}
+	
+	\begin{itemize}
+		\item $\mathbf{Is\ E\ perfect?}$
+	\end{itemize}
+	\begin{answer}
+		Yes.
+	\end{answer}
+	\begin{proof}
+		We have known $E$ is closed in the previous proof. Now we claim every point of $E$ is a limit point of $E$.
+		
+		Let $x\in E$ arbitrarily. And we change the $k$-th digit of $x$ from $4$ to $7$ or from $7$ to $4$; moreover, we denote this number $x_k$.
+		
+		Since $d(x, x_k)=3\times 10^{-k}$, by Archimedean property, there is $k\in\mathbb{Z}$ such that $3\times 10^{-k} < r$. This means we can find such $x_k\in E$ in the neighborhood $N_r(x)$. By the arbitrary choice of $x$, we obtain every neighborhood of every point in $E$ contains another point in $E$. So every point in $E$ is a limit point.
+		
+		It follows that $E$ is perfect.
+	\end{proof}
+\end{Exercise}

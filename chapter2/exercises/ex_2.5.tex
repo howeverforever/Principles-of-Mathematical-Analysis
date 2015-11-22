@@ -1,0 +1,28 @@
+% === Exercise 2.5 ===
+\begin{Exercise}
+	\begin{proof}
+		Let $E := \left\{ 1+\frac{1}{n} : n\in \{2,3,\cdots\} \right\}$.
+		\begin{itemize}
+			\item $\mathbf{Claim\ only\ 1\ is\ a\ limit\ point}$
+			
+			By Archimedean Property, we can pick radius $r$ such that $\frac{1}{n} < r$. 
+			Then $p_n = 1+\frac{1}{n}$ is a member of $E$ and $d(1, p_n) = \frac{1}{n} < r$. 
+			Hence $1$ is a limit point.
+			
+			On the other hand, consider a point $x$ such that $x\notin E\cup \{1\}$. 
+			We set 
+			$$
+			\delta = \min\{d(x,1), d(x,2), d(x, p_n), d(x, p_{n+1})\},
+			$$
+			and $r = \frac{\delta}{2}$. 
+			Then there is no point of $E$ in $N_r(x)$.
+		\end{itemize}
+		
+		Moreover, we set $F := \left\{ 2+\frac{1}{n} : n\in \{2,3,\cdots\} \right\}$. 
+		And $G := \left\{ 3+\frac{1}{n} : n\in \{2,3,\cdots\} \right\}$. 
+		A similar argument establishes only $2$ and $3$ are limit points.
+		
+		Now we set $K := E\cup F\cup G$, then $K$ is bounded by $4$.
+		Hence we construct $K$ which is a bounded set of real numbers with exactly three limit points $1,2$ and $3$ as promised.
+	\end{proof}
+\end{Exercise}

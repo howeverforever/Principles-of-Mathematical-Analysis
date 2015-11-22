@@ -1,0 +1,33 @@
+% === Exercise 3.3 ===
+\begin{Exercise}
+	\begin{proof}
+		It suffices to prove $\{s_n\}$ is increasing and bounded above by $2$. By Theorem 3.14, it follows that $\{s_n\}$ is convergent.
+		
+		\begin{itemize}
+			\item $\mathbf{\{s_n\}\ is\ increasing.}$ 
+		\end{itemize}
+		It is clear that $0<s_1=\sqrt{2}<2$ holds trivially.
+		Consider
+		$$
+		s_2 = \sqrt{2+\sqrt{s_1}} = \sqrt{2+\sqrt{\sqrt{2}}} > \sqrt{2} = s_1.
+		$$
+		Suppose for $n\leq k$, $s_{k+1}>s_k$ holds. Then for $n = k+1$, we obtain
+		$$
+		s_{k+2} = \sqrt{2+\sqrt{s_{k+1}}} > \sqrt{2+\sqrt{s_k}} = s_{k+1}
+		$$
+		also holds. By induction, $s_{n+1}>s_n$ holds for all $n\in\mathbb{N}$; hence $\{s_n\}$ is increasing.
+		
+		\begin{itemize}
+			\item $\mathbf{\{s_n\}\ is\ bounded\ above\ by\ 2.}$ 
+		\end{itemize}
+		It is clear that $s_1 = \sqrt{2} < 2$. Then suppose for $n=k$, $s_k < 2$ holds. For $n=k+1$, we consider
+		\begin{alignat*}{7}
+		\quad&& 0 &<s_k<2 \\
+		\implies&& 0 &< \sqrt{s_k} < \sqrt{2} \\
+		\implies&& 2 &< 2+\sqrt{s_k} < 2+\sqrt{2} \\
+		\implies&& \sqrt{2} &< \sqrt{2+\sqrt{s_k}} < \sqrt{2+\sqrt{2}} \\
+		\implies&& \sqrt{2} &< s_{k+1} < 2.
+		\end{alignat*}
+		By induction, $s_n<2$ for all $n\in\mathbb{N}$; hence $\{s_n\}$ is bounded above by 2.
+	\end{proof}
+\end{Exercise}
