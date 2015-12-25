@@ -1,0 +1,31 @@
+% === Exercise 7.1 ===
+\begin{Exercise}
+	\begin{proof}
+		Let $f_n\to f$ uniformly on a set $E$ and $f_n$ is bounded for each $n$.
+		That is, for each $n$, there exists $M_n > 0$ such that
+		$$
+		|f_n(x)| \leq M_n
+		$$
+		for all $x\in E$; besides, given $\epsilon = 1$, there exists $N>0$ such that
+		$$
+		m,n \geq N \implies |f_n(x) - f_m(x)| < 1
+		$$
+		for all $x\in E$.
+		Hence for $n\geq N$, we have
+		$$
+		|f_n(x)|
+		\leq |f_n(x) - f_N(x)| + |f_N(x)| + |f_N(x)|
+		\leq 1 + M_N.
+		$$
+		Pick $M' := \max\{M_1,M_2,\cdots,M_{N-1}\}$, then we know
+		$$
+		|f_n(x)| \leq M_n \leq M' \mbox{ , } n=1,2,\cdots,N-1
+		$$
+		for all $x\in E$. 
+		Finally, we pick $M := \max\{1 + M_N, M'\}$ to get
+		$$
+		|f_n(x)| \leq M \mbox{ , } \forall x\in E,\ n=1,2,\cdots.
+		$$
+		Hence we conclude $\{f_n\}$ is uniformly bounded.
+	\end{proof}
+\end{Exercise}

@@ -1,0 +1,60 @@
+% === Exercise 7.2 ===
+\begin{Exercise}
+	\begin{itemize}
+		\item Prove $\{f_n+g_n\}$ converges uniformly on $E$.
+	\end{itemize}
+	\begin{proof}
+		Since $\{f_n\}$, $\{g_n\}$ converge uniformly on a set $E$, we know given $\epsilon>0$, there exists $N_1>0$ such that
+		$$
+		n,m\geq N_1,\ x\in E \implies |f_n(x) - f_m(x)| < \frac{\epsilon}{2}.
+		$$
+		And there exists $N_2>0$ such that
+		$$
+		n,m\geq N_2,\ x\in E \implies |g_n(x) - g_m(x)| < \frac{\epsilon}{2}.
+		$$
+		Then we pick $N = \max\{N_1,N_2\}$. For $n,m\geq N$ and $x\in E$, we have
+		\begin{align*}
+		\Big| \big( f_n(x) + g_n(x) \big) - \big( f_m(x) + g_m(x) \big) \Big|
+		&\leq | f_n(x) - f_m(x) | + | g_n(x) - g_m(x) | \\
+		&< \frac{\epsilon}{2} + \frac{\epsilon}{2} \\
+		&= \epsilon.
+		\end{align*}
+		This means $\{f_n + g_n\}$ converges uniformly on $E$.
+	\end{proof}
+	
+	\begin{itemize}
+		\item Prove $\{f_n g_n\}$ converges uniformly on $E$.
+	\end{itemize}
+	\begin{proof}
+		Since $\{f_n\}$, $\{g_n\}$ converge uniformly on $E$ and bounded, by Exercise 7.1, we know $\{f_n\}$, $\{g_n\}$ are uniformly bounded.
+		Hence there exists $M_f > 0$, $M_g > 0$ such that $|f_n(x)| \leq M_f$, $|g_n(x)| \leq M_g$ for each $n$ and for all $x\in E$.
+		Since $\{f_n\}$ converges uniformly on $E$, then there exists $N_1 > 0$ such that
+		$$
+		n\geq N_1,\ x\in E \implies |f_n(x) - f(x)| < 1.
+		$$
+		Then
+		$$
+		|f(x)| 
+		\leq |f(x) - f_{N_1}(x)| + |f_{N_1}(x)| 
+		<  1 + M_f.
+		$$
+		Moreover, given $\epsilon>0$, there exists $N_2 > 0$ such that
+		$$
+		n\geq N_2,\ x\in E \implies |f_n(x) - f(x)| < \frac{\epsilon}{2M_g}.
+		$$
+		Since $\{g_n\}$ converges uniformly on $E$, then there exists $N_3 > 0$ such that
+		$$
+		n\geq N_3,\ x\in E \implies |g_n(x) - g(x)| < \frac{\epsilon}{2(1+M_f)}
+		$$
+		Pick $N := \max\{N_1,N_2,N_3\}$.
+		For $n\geq N$ and $x\in E$, we consider
+		\begin{align*}
+		|f_n(x) g_n(x) - f(x) g(x)|
+		&\leq |f_n(x) g_n(x) - f(x) g_n(x)| + |f(x) g_n(x) - f(x) g(x)| \\
+		&= |g_n(x)| \cdot |f_n(x) - f(x)| + |f(x)| \cdot |g_n(x) - g(x)| \\
+		&< M_g \cdot \frac{\epsilon}{2M_g} + (1+M_f) \cdot \frac{\epsilon}{2(1+M_f)} \\
+		&= \epsilon
+		\end{align*}
+		Hence $\{f_n g_n\}$ converges uniformly on $E$.
+	\end{proof}
+\end{Exercise}
