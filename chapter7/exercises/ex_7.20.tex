@@ -1,0 +1,33 @@
+% === Exercise 7.20 ===
+\begin{Exercise}
+	\begin{proof}
+		Let $P(x)$ be an arbitrary polynomial such that
+		$$
+		P(x) = a_n x^n + \cdots + a_1 x + a_0.
+		$$
+		We observe
+		$$
+		\int_{0}^{1} f(x) P(x)\,dx
+		= a_n \int_{0}^{1} f(x)x^n\,dx + \cdots + a_1 \int_{0}^{1} f(x)x\,dx + a_0 \int_{0}^{1} f(x)\,dx
+		= 0.
+		$$
+		By the Stone-Weierstrass Theorem, we can pick a sequence of polynomials $P_n(x)$ such that
+		$$
+		\lim_{n\to\infty} P_n(x) = f(x)
+		$$
+		uniformly on $[0,1]$.
+		By Theorem 7.16, we know
+		$$
+		0
+		= \lim_{n\to\infty}\int_{0}^{1}f(x) P_n(x)\,dx
+%		↓ Here is maybe incredible.
+		= \int_{0}^{1} \lim_{n\to\infty} f(x) P_n(x)\,dx
+		= \int_{0}^{1} f(x) \lim_{n\to\infty} P_n(x)\,dx
+		= \int_{0}^{1} f^2(x)\,dx
+		$$
+		Since $f$ is continuous on $[0,1]$, and so is $f^2$.
+		Moreover, $f^2(x) \geq 0$ for all $x\in[0,1]$.
+		By Exercise 6.2, we know $f^2(x) = 0$ on $[0,1]$.
+		It follows that $f(x) = 0$ on $[0,1]$ immediately.
+	\end{proof}
+\end{Exercise}

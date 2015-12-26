@@ -1,0 +1,65 @@
+% === Exercise 7.4 ===
+\begin{Exercise}
+	\begin{itemize}
+		\item For what values of $x$ does the series converges absolutely?
+	\end{itemize}
+	\begin{answer}
+		For all $x\in \mathbb{R}$ except $x=0$ or $x=-\frac{1}{n^2}$ where $n\in\mathbb{N}$.
+	\end{answer}
+	\begin{solution}
+		We split it into four cases to discuss.
+		\begin{enumerate}[i)]
+			\item For $x=0$.
+			
+			Consider 
+			$$
+			\sum_{n=1}^{\infty} \left| \frac{1}{1 + n^2 \cdot 0} \right|
+			= \sum_{n=1}^{\infty} \left| 1 \right| = \infty.
+			$$
+			This means the series diverges.
+			
+			\item For $x>0$.
+			
+			Consider
+			$$
+			\sum_{n=1}^{\infty} \left| \frac{1}{1 + n^2 x} \right|
+			= \left| \frac{1}{x} \right| \sum_{n=1}^{\infty} \left| \frac{1}{\frac{1}{x} + n^2} \right| 
+			\leq \left| \frac{1}{x} \right| \sum_{n=1}^{\infty} \left| \frac{1}{n^2} \right|
+			\leq \sum_{n=1}^{\infty} \left| \frac{1}{n^2} \right|
+			= \sum_{n=1}^{\infty} \frac{1}{n^2}
+			$$
+			By the p-Series Test and the Comparison Test, we know the series converges absolutely.
+			
+			\item For $x<0$ with $x = -\frac{1}{n^2}$ for some $n\in\mathbb{N}$.
+			
+			The $n$th term is not defined, and hence the series is undefined.
+			
+			\item For $x<0$ with $x \neq -\frac{1}{n^2}$ for all $n\in\mathbb{N}$.
+			
+			Consider 
+			$$
+			\sum_{n=1}^{\infty} \left| \frac{1}{1 + n^2 x} \right|
+			= \left| \frac{1}{x} \right| \sum_{n=1}^{\infty} \left| \frac{1}{n^2} \right| \left| \frac{1}{\frac{1}{n^2 x} + 1} \right|
+			\leq \sum_{n=1}^{\infty} \left| \frac{1}{n^2} \right| \left| \frac{1}{\frac{1}{n^2 x} + 1} \right|.
+			$$
+			Notice that $\sum_{n=1}^{\infty} \left| \frac{1}{n^2} \right|$ converges.
+			Since $\left\{\frac{1}{\frac{1}{n^2 x} + 1} \right\}_{n\in\mathbb{N}}$ is bounded by $1$ and is decreasing, by Exercise 3.8 and the Comparison Test, we know the series converges absolutely.
+		\end{enumerate}
+	\end{solution}
+	
+	\begin{itemize}
+		\item On what intervals does it converge uniformly? (Omitted)
+	\end{itemize}
+	
+	\begin{itemize}
+		\item On what intervals does it fail to converge uniformly? (Omitted)
+	\end{itemize}
+	
+	\begin{itemize}
+		\item Is $f$ continuous wherever the series converges? (Omitted)
+	\end{itemize}
+	
+	\begin{itemize}
+		\item Is $f$ bounded? (Omitted)
+	\end{itemize}
+\end{Exercise}

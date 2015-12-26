@@ -1,0 +1,46 @@
+% === Exercise 7.7 ===
+\begin{Exercise}
+	\begin{proof}
+		In order to show that $\{f_n\}$ converges uniformly to a function $f$, we use Theorem 7.9.
+		Now we need to prove
+		$$
+		\sup_{x\in\mathbb{R}} |f_n(x) - f(x)| \to 0 \text{ as } n\to\infty.
+		$$
+		First we try to find the global maximum of $f_n$,
+		$$
+		f_n'(x)
+		= \frac{(1+n x^2) - 2n x^2}{(1+n x^2)^2}
+		= \frac{1-n x^2}{(1+n x^2)^2}.
+		$$
+		$f_n'(x) = 0$ implies $x = \pm\frac{1}{\sqrt{n}}$.
+		Notice that $f_n(-\frac{1}{\sqrt{n}}) < f_n(\frac{1}{\sqrt{n}})$.
+		Then we observe 
+		$$
+		\sup_{x\in\mathbb{R}}|f_n(x)|
+		= \left| f_n(\frac{1}{\sqrt{n}}) \right|
+		= \left| \frac{1}{2\sqrt{n}} \right|
+		= \frac{1}{2\sqrt{n}}.
+		$$
+		
+		Since $f(x) = \lim_{n\to\infty}f_n(x) = 0$ for all $x\in\mathbb{R}$, then we know
+		$$
+		\sup_{x\in\mathbb{R}} |f_n(x) - f(x)|
+		= \sup_{x\in\mathbb{R}} |f_n(x)|
+		= \frac{1}{2\sqrt{n}} \to 0
+		$$
+		as $n\to\infty$.
+		Hence $\{f_n\}$ converges uniformly to $f$ which is a zero function.
+		
+		Notice that
+		$$
+		\lim_{n\to\infty}f_n'(x) 
+		= \lim_{n\to\infty}\frac{1-n x^2}{1 + 2 n x^2 + n^2 x^4}
+		= \begin{cases}
+		0 & \mbox{ for } x=0 \\
+		1 & \mbox{ otherwise} 
+		\end{cases}.
+		$$
+		Since $f(x) = 0$ for all $x\in\mathbb{R}$ and hence $f'(x) = 0$ trivially.
+		It follows that $f'(x) = \lim_{n\to\infty}f'_n(x)$ is correct if $x\neq 0$, but false if $x = 0$.
+	\end{proof}
+\end{Exercise}
