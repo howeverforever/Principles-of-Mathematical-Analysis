@@ -1,0 +1,34 @@
+% === Exercise 7.16 ===
+\begin{Exercise}
+	\begin{proof}
+		Let $\epsilon > 0$ be given.
+		Since $\{f_n\}$ is an equicontinuous sequence of functions on a compact set $K$, then for all $n$, there exists $\delta>0$ such that
+		$$
+		d(x,y)<\delta,\ x\in K,\ y\in K \implies |f_n(x) - f_n(y)| < \epsilon.
+		$$
+		Let $V(x,\delta)$ be the set of all $y\in K$ with $d(x,y)<\delta$.
+		Since $K$ is compact, then there are finitely many points $x_1,x_2,\cdots,x_m\in K$ such that
+		$$
+		K\subset V(x_1,\delta)\cup V(x_2,\delta)\cup \cdots \cup V(x_m,\delta).
+		$$
+		Since $\{f_n\}$ converges pointwise on $K$, then there exists $N>0$ such that
+		$$
+		n\geq N \implies |f_n(x_i) - f(x_i)|<\frac{\epsilon}{4}
+		$$
+		for $i=1,2,\cdots,m$.
+		If $x\in K$, we have $x\in V(x_i,\delta)$ for some $i$.
+		It follows that
+		$$
+		|f_n(x)-f_n(x_i)|<\frac{\epsilon}{4}
+		$$
+		for all $n$.
+		For $j\geq N$, $k\geq N$, we consider
+		\begin{align*}
+		|f_j(x)-f_k(x)|
+		&\leq |f_j(x)-f_j(x_i)| + |f_j(x_i) - f(x_i)| + |f(x_i) - f_k(x_i)| + |f_k(x_i) - f_k(x)| \\
+		&< \frac{\epsilon}{4} + \frac{\epsilon}{4} + \frac{\epsilon}{4} + \frac{\epsilon}{4} \\
+		&= \epsilon.
+		\end{align*}
+		By Theorem 7.8, we conclude $\{f_n\}$ converges uniformly on $K$.
+	\end{proof}
+\end{Exercise}
