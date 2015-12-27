@@ -42,17 +42,11 @@
 % === Contents Pages ===
 \pagenumbering{roman}
 
-\titlecontents{chapter}
-  [0pt]
-  {\addvspace{1em}}
-  {\bfseries\chaptername\ \thecontentslabel\quad}
-  {}
-  {\bfseries\hfill\contentspage}
-\tableofcontents
-
 % === Preface ===
 \include{abstract}
-\newpage
+
+% === Table ===
+\include{table}
 
 % === Main Pages ===
 \newpage
@@ -62,5 +56,7 @@
 \subimport*{chapter4/}{chapter4}
 \subimport*{chapter5/}{chapter5}
 \subimport*{chapter6/}{chapter6}
+\subimport*{chapter7/}{chapter7}
+\subimport*{chapter9/}{chapter9}
 
 \end{document}

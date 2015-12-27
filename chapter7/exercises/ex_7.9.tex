@@ -1,0 +1,56 @@
+% === Exercise 7.9 ===
+\begin{Exercise}
+	\begin{proof}
+		Since $f_n\to f$ uniformly on $E$, then given $\epsilon>0$, there exists $N_1>0$ such that
+		$$
+		n\geq N_1,\ y\in E \implies |f_n(y) - f(y)| < \frac{\epsilon}{2}.
+		$$
+		Since $x_n\in E$, we have
+		$$
+		n\geq N_1 \implies |f_n(x_n) - f(x_n)| < \frac{\epsilon}{2}.
+		$$
+		Notice that $\{f_n\}$ is a sequence of continuous functions on $E$ and $f_n\to f$ uniformly, by Theorem 7.12, we know $f$ is continuous on $E$.
+		Notice that $x_n, x\in E$.
+		Hence there exists $N_2 > 0$ such that
+		$$
+		n\geq N_2 \implies |f(x_n) - f(x)| < \frac{\epsilon}{2}.
+		$$
+		Put $N := \max\{N_1, N_2\}$.
+		Then for $n\geq N$, we have
+		\begin{align*}
+		|f_n(x_n) - f(x)|
+		&\leq |f_n(x_n) - f(x_n)| + |f(x_n) - f(x)| \\
+		&< \frac{\epsilon}{2} + \frac{\epsilon}{2} \\
+		&= \epsilon.
+		\end{align*}
+		Since $\epsilon$ was arbitrary, it follows that
+		$$
+		\lim_{n\to\infty} f_n(x_n) = f(x).
+		$$
+	\end{proof}
+	
+	\begin{itemize}
+		\item Is the converse of the statement true?
+	\end{itemize}
+	\begin{answer}
+		No.
+	\end{answer}
+	\begin{proof}
+		Consider $f_n(x) = \frac{x}{n}$.
+		Put $x_n = 1$ for all $n\in\mathbb{N}$ and $E = [0,1]$.
+		Then $\{x_n\}$ converges to $1$ trivially.
+		Notice that 
+		$$
+		f(0) = \lim_{n\to\infty} f_n(0) = 0.
+		$$
+		We observe
+		$$
+		\lim_{n\to\infty}f_n(x_n)
+		= \lim_{n\to\infty}f_n(1)
+		= \lim_{n\to\infty} \frac{1}{n}
+		= 0
+		= f(0).
+		$$
+		This means $\{x_n\}$ converges to $0$, which is a contradiction.
+	\end{proof}
+\end{Exercise}

@@ -1,0 +1,40 @@
+% === Exercise 7.5 ===
+\begin{Exercise}
+	\begin{itemize}
+		\item Show that $\{f_n\}$ converges to a continuous function, but not uniformly.
+	\end{itemize}
+	\begin{proof}
+		Considering for $x\leq 0$ and $x > 1$, we observe $f_n(x) = 0$ for all $n\in\mathbb{N}$.
+		Then $f(x) = \lim_{n\to\infty}f_n(x) = 0$ trivially.
+		For any other value $x$, we just choose $N$ such that $N>\frac{1}{x}$ to make 
+		$$
+		n\geq N \implies x > \frac{1}{n}.
+		$$
+		Then $f(x) = \lim_{n\to\infty}f_n(x) = 0$, too.
+		So far, we observe $\{f_n\}$ converges to $f(x) = 0$ which is continuous.
+		
+		To show that $f_n\to f$ not uniformly, let $0<\epsilon<1$ be given.
+		We consider any $n$, then there always exists a point $x = \frac{2}{2n+1}$ such that
+		$$
+		f_n(x) 
+		= \sin^2 \frac{\pi}{x} 
+		= \sin^2 \left(n\pi + \frac{\pi}{2} \right)
+		= 1.
+		$$
+		It follows that
+		$$
+		|f_n(x) - f(x)| = 1 \geq \epsilon.
+		$$
+		Hence $f_n\to f$ not uniformly.
+	\end{proof}
+	
+	\begin{itemize}
+		\item Show that absolute convergence does not imply uniform convergence.
+	\end{itemize}
+	\begin{proof}
+		Notice that $|f_n| = f_n$ for all $x$.
+		Since $\{f_n\}$ converges to $f$, then $\{|f_n|\}$ also converges to $f$.
+		Hence $\sum f_n$ converges absolutely.
+		However, $\{f_n\}$ does not converge uniformly from the previous argument.
+	\end{proof}
+\end{Exercise}
