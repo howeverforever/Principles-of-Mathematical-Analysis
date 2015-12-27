@@ -1,0 +1,35 @@
+% === Exercise 5.17 ===
+\begin{Exercise}
+	\begin{proof}
+		Follow the hint.
+		By Theorem 5.15 (Taylor's Theorem), if we put $\alpha = 0, \beta = 1$, then
+		$$
+		f(1) = f(0) + f'(0) + \frac{f''(0)}{2}+\frac{f^{(3)}(s)}{6}
+		$$
+		where $s\in(0,1)$.
+		If we put $\alpha = 0, \beta = -1$, then
+		$$
+		f(-1) = f(0) - f'(0) + \frac{f''(0)}{2}-\frac{f^{(3)}(t)}{6}
+		$$
+		where $t\in(-1,0)$.
+		Now we subtract the second equation from the first one so that
+		$$
+		f(1) + f(-1) = 2f'(0) + \frac{f^{(3)}(s)}{6} + \frac{f^{(3)}(t)}{6}.
+		$$
+		Since $f(1) = 1, f(-1) = 0, f'(0) = 0$, we have
+		$$
+		\frac{f^{(3)}(s)}{6} + \frac{f^{(3)}(t)}{6} = 1
+		$$
+		where $s\in(0,1), t\in(-1,0)$.
+		We deduce
+		$$
+		f^{(3)}(s) + f^{(3)}(t) = 6
+		$$
+		where $s,t\in(-1,1)$.
+		This is the desired result to conclude
+		$$
+		f^{(3)}(x) \geq 3
+		$$
+		for some $x\in(-1,1)$.
+	\end{proof}
+\end{Exercise}
