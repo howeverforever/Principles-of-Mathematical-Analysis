@@ -1,0 +1,30 @@
+% === Exercise 4.8 ===
+\begin{Exercise}
+	\begin{proof}
+		Since $f$ is uniformly continuous on $E$, then there exists $\delta>0$ such that
+		$$
+		|x-y|<\delta,\ x\in E,\ y\in E \implies |f(x)-f(y)|< 1.
+		$$
+		We can pick $M$ so big that $E\subset [-M,M]$ and $N$ such that $N>\frac{2M}{\delta}$ by Archimedean Principle.
+		This means we can cover $E$ with $N$ closed intervals $I_i$ which intersects $E$ and $|I_i|<\delta$.
+		For each $i$, pick $x_i\in I_i\cap E$.
+		
+		Let $M = 1 + \max_{1\leq i \leq N}\{|f(x_i)\}$.
+		For every $y\in E$, we know $y\in I_j$ for some $j$.
+		Since $x_j\in I_j$ and $|I_j|<\delta$, then $|f(y)-f(x_j)|<1$.
+		It follows that $|f(y)|<M$ for all $y\in E$.
+		Hence $f$ is bounded on $E$.
+	\end{proof}
+	\begin{itemize}
+		\item Show that the conclusion is false if boundedness of $E$ is omitted.
+	\end{itemize}
+	\begin{proof}
+		Consider $f(x) = x$ and $E = \mathbb{R}$.
+		Given $\epsilon>0$, for $x,y\in \mathbb{R}$, there exists $\delta = \epsilon$ such that
+		$$
+		|x-y|<\delta \implies |f(x)-f(y)| = |x-y| < \delta = \epsilon.
+		$$
+		This means $f$ is uniformly continuous on $\mathbb{R}$.
+		However, $f$ is not bounded.
+	\end{proof}
+\end{Exercise}

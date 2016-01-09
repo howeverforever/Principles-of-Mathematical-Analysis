@@ -1,0 +1,40 @@
+% === Exercise 4.5 ===
+\begin{Exercise}
+	\begin{proof}
+		Since $E$ is closed, then $E^c$ is open.
+		By Exercise 2.29, $E^c$ is the union of an at most countable collection of disjoint segments.
+		Hence $E^c = \bigcup_{i=1}^{n}(a_i,b_i)$ where $b_i < a_{i+1}$ for each $i$.
+		For each $i$, we define a function $g$ by
+		$$
+		g(x) = f(a_i) + (x-a_i)\frac{f(b_i)-f(a_i)}{b_i-a_i}
+		$$
+		for $x\in(a_i,b_i)$.
+		
+		Let $g(x) = f(x)$ for $x\in E$.
+		Since it is a linear function on $E^c$ and $f$ is continuous on $E^c$, then $g$ is continuous on interior of $E$.
+		Since $\lim_{x\to a_i} g(x) = f(a_i) = g(a_i)$ and $a_i\in E$, this means $g$ is continuous at $a_i$.
+		Similarly, $g$ is continuous at $b_i$.
+		
+		Hence we know $g$ is continuous on $[a_i,b_i]$ for each $i$.
+		It follows that $g$ is a continuous extension of $f$.
+	\end{proof}
+	
+	\begin{itemize}
+		\item Show that the result becomes false if the word "closed" is omitted.
+	\end{itemize}
+	\begin{proof}
+		Consider $f(x) = \frac{1}{x}$ on $(0,1)$.
+		However, $\lim_{x\to 0}f(x) = \infty \notin \mathbb{R}^1$.
+		That is, we can not find $g(0)\in \mathbb{R}^1$.
+	\end{proof}
+	
+	\begin{itemize}
+		\item Extend the result to vector-valued functions.
+	\end{itemize}
+	\begin{proof}
+		Let $f:E\to\mathbb{R}^k$ be a continuous vector-valued function defined by $f = \big( f_1, f_2, \cdots, f_k)$.
+		Then $f_i$ is continuous on $E$ for each $i$.
+		We can find $g_i$ is a continuous extension $f_i$ for each $i$.
+		Hence $g = (g_1,g_2,\cdots,g_k)$ is a continuous extension of $f$.
+	\end{proof}
+\end{Exercise}

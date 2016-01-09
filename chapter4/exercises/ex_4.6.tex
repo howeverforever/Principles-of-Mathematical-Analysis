@@ -1,0 +1,23 @@
+% === Exercise 4.6 ===
+\begin{Exercise}
+	\begin{proof}
+		Let $G$ be the graph of $f$.
+		Define $g:E\to G$ by $g(x) = \big( x,f(x) \big)$.
+		Put $d_G\big( g(x), g(y) \big) = d_E\Big( \big(x, f(x) \big), \big( y, f(y) \big)\Big) = \sqrt{(x-y)^2 + \big(f(x)-f(y)\big)^2}$. That is, we consider $G$ is a subset of $\mathbb{R}^2$.
+		
+		$(\Longrightarrow)$
+		Since $x$, $f(x)$ are continuous on $E$, then $g$ is continuous on $E$.
+		Notice that $E$ is compact, by Theorem 4.14, it follows that $G$ is compact.
+		
+		$(\Longleftarrow)$
+		Suppose $f$ is not continuous on $E$, then for some $x\in E$, there is a convergent sequence $\{x_n\}\to x$ such that $f(x_n)$ does not converge to $f(x)$. We consider two cases as follows.
+		\begin{enumerate}[i)]
+			\item If no subsequence of $f(x_n)$ converges, $\left\{\big(x_n,f(x_n)\big) \right\}$ has no convergent subsequence.
+			Hence $G$ is not compact.
+			
+			\item If some subsequences of $f(x_n)$ converge, say $f(x_{n_k})\to y$ as $n_k\to \infty$ with $f(x) \neq y$, then the limit point $(x,y)$ does not belong to $G$.
+			It follows that $G$ is not compact.
+		\end{enumerate}
+		As a result, we have proven the contrapositive.
+	\end{proof}
+\end{Exercise}
