@@ -1,0 +1,38 @@
+% === Exercise 6.8 ===
+\begin{Exercise}
+	\begin{proof}
+		Assume $c>1$.
+		Let $n$ be the greatest integer such that $c \leq n < c+1$.
+		Let $P_n$ be a partition $\{x_0=1, 2, \cdots, n = x_{n-1}\}$ of $[1,n]$.
+		We observe
+		\begin{align*}
+		\int_{1}^{c} f(x)\,dx
+		&\geq \int_{1}^{n} f(x)\,dx & (\because f(x)\geq 0) \\
+		&\geq L(P_n, f) \\
+		&= \sum_{i=1}^{n-1}m_i \Delta x_i \\
+		&= \sum_{i=1}^{n-1} f(i+1). & (\because f \text{ decrease monotonically})
+		\end{align*}
+		Taking the limit on both sides as $c\to\infty$, provided $n\to\infty$ simultaneously, we obtain
+		$$
+		\lim_{c\to\infty} \int_{1}^{c} f(x)\,dx
+		\geq \lim_{n\to\infty} \sum_{i=1}^{n-1} f(i+1).
+		$$
+		By the Comparison Test, if $\int_{1}^{\infty} f(x)\,dx$ converges, then $\sum_{i=1}^{\infty} f(i)$ follows.
+		
+		Conversely, let $P_{n+1}$ be a partition $\{x_0=1, 2, \cdots, n+1 = x_{n}\}$ of $[1,n+1]$.
+		We observe
+		\begin{align*}
+		\int_{1}^{c} f(x)\,dx
+		&\leq \int_{1}^{n+1} f(x)\,dx & (\because f(x)\geq 0) \\
+		&\leq U(P_{n+1}, f) \\
+		&= \sum_{i=1}^{n}M_i \Delta x_i \\
+		&= \sum_{i=1}^{n} f(i). & (\because f \text{ decrease monotonically})
+		\end{align*}
+		Taking the limit on both sides as $c\to\infty$, provided $n\to\infty$ simultaneously, we obtain
+		$$
+		\lim_{c\to\infty} \int_{1}^{c} f(x)\,dx
+		\leq \lim_{n\to\infty} \sum_{i=1}^{n} f(i).
+		$$
+		By the Comparison Test, if $\sum_{i=1}^{\infty} f(i)$ converges, then $\int_{1}^{\infty} f(x)\,dx$ follows.
+	\end{proof}
+\end{Exercise}
