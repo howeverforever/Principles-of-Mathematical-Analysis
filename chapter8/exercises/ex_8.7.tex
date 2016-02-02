@@ -1,0 +1,24 @@
+% === Exercise 8.7 ===
+\begin{Exercise}
+	\begin{proof}
+		Put $f(x) = \dfrac{2x}{\pi} - \sin x$.
+		Since $f(0) = f(\dfrac{\pi}{2}) = 0$, by Rolle's Theorem, there exists $c\in\left(0, \dfrac{\pi}{2}\right)$ such that $f'(c) = 0$.
+		Consider $f''(x) = \sin x > 0$ on $\left(0,\dfrac{\pi}{2}\right)$.
+		This means $f'$ is strictly increasing on $\left(0,\dfrac{\pi}{2}\right)$.
+		So, such $c$ is the only point, then $f(x) < 0$ for $0 < x < \dfrac{\pi}{2}$.
+		That is,
+		\begin{equation*}
+		\frac{2}{\pi} < \frac{\sin x}{x}.\qquad\mbox{ $(0 < x < \frac{\pi}{2}$)}
+		\end{equation*}
+		
+		On the other hand, put $g(x) = \sin x - x$.
+		Then $g'(x) = \cos x - 1 < 0$ on $\left( 0, \dfrac{\pi}{2} \right)$.
+		Therefore $g$ is strictly decreasing on this interval.
+		Since $g(0) = 0$, we know $g(x) < 0$ on this interval.
+		
+		Hence we conclude for $0 < x < \dfrac{\pi}{2}$,
+		$$
+		\frac{2}{\pi} < \frac{\sin x}{x} < 1.
+		$$
+	\end{proof}
+\end{Exercise}
