@@ -1,0 +1,45 @@
+% === Exercise 9.15 ===
+\begin{Exercise}
+	\begin{enumerate}[(a)]
+		\item
+		\begin{proof}
+			Since $(x^2-|y|)^2 \geq 0$, then $2x^2 |y| \leq x^4+y^2$.
+			It follows that
+			$$
+			4x^4y^2\leq (x^4+y^2)^2.
+			$$
+			Given $\epsilon > 0$, there exists $\delta = \sqrt{-1+\sqrt{1+\epsilon} } > 0$ such that
+			\begin{align*}
+			\| (x,y) - (0,0) \| < \delta 
+			&\implies | f(x,y) - f(0,0) | \\
+			&= \left| x^2 + y^2 -2x^2 y - \frac{4x^6 y^2}{(x^4+y^2)^2} \right| \\
+			&\leq x^2 + y^2 + 2x^2 |y| + \left| \frac{4x^6 y^2}{(x^4+y^2)^2} \right| \\
+			&\leq x^2 + y^2 + 2x^2 |y| + x^2 \\
+			&= 2x^2 + y^2 + (x^4+y^2) \\
+			&\leq 2(x^2+y^2) + (x^2+y^2)^2 \\
+			&< 2\delta^2 + \delta^4 \\
+			&= \epsilon.
+			\end{align*}
+			This means $f$ is continuous at $(0,0)$.
+			Besides, $f$ is continuous on $\mathbb{R}^2\setminus (0,0)$ trivially.
+			Hence $f$ is continuous on $\mathbb{R}^2$.
+		\end{proof}
+		
+		\item
+		\begin{proof}
+			Observe
+			$$
+			g_{\theta}(t) = t^2-2t^3\cos^2 \theta \sin \theta - \frac{4t^4\cos^6\theta\sin^2\theta}{(t^2\cos^4\theta+\sin^2\theta)^2}.
+			$$
+			Hence $g_{\theta}(0) = 0$, $g'_{\theta}(0) = 0$ and $g''_{\theta}(0) = 2$.
+			
+			Since $g''_{\theta}(0) > 0$ and $g'_{\theta}(0) = 0$, we know $g_{\theta}$ has therefore a strict local minimum at $t=0$.
+		\end{proof}
+		
+		\item
+		\begin{proof}
+			We pick $y = x^2$, then $f(x,x^2) = -x^4 < 0$ for $(x,y)$ near $(0,0)$.
+			Consequently, $f$ has no local minimum at $(0,0)$.
+		\end{proof}
+	\end{enumerate}
+\end{Exercise}
