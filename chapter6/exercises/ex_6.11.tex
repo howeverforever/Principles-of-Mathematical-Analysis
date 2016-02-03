@@ -1,0 +1,25 @@
+% === Exercise 6.11 ===
+\begin{Exercise}
+	\begin{proof}
+		Notice that by Exercise 6.10(c), we have
+		\begin{align*}
+		\int_{a}^{b}|f-g| |g-h|\,d\alpha
+		&= \left| \int_{a}^{b}|f-g| |g-h|\,d\alpha \right| \\
+		&\leq \left\{ \int_{a}^{b} |f-g|^2\,d\alpha \right\}^{\frac{1}{2}} \left\{ \int_{a}^{b} |g-h|^2\,d\alpha \right\}^{\frac{1}{2}} \\
+		&= \| f-g \|_2~\|g-h\|_2.
+		\end{align*}
+		So,
+		\begin{align*}
+		\|f-h\|^2_2
+		&= \int_{a}^{b} |f-h|^2\,d\alpha \\
+		&= \int_{a}^{b} |(f-g)+(g-h)|^2\,d\alpha \\
+		&= \int_{a}^{b} |(f-g)|^2\,d\alpha + 2\int_{a}^{b} |(f-g)| |(g-h)|\,d\alpha+ \int_{a}^{b}|(g-h)|^2\,d\alpha \\
+		&\leq \|f-g\|^2_2 + 2~\|f-g\|_2~\|g-h\|_2 + \|g-h\|^2_2 \\
+		&= (\|f-g\|_2 + \|g-h\|_2)^2.
+		\end{align*}
+		It follows that
+		$$
+		\|f-h\|_2 \leq \|f-g\|_2 + \|g-h\|_2.
+		$$
+	\end{proof}
+\end{Exercise}
