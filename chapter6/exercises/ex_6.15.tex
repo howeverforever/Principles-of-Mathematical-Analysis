@@ -1,29 +1,32 @@
 % === Exercise 6.15 ===
 \begin{Exercise}
 	\begin{itemize}
-		\item Prove that $\int_{a}^{b}x f(x) f'(x)\,x = -\frac{1}{2}$.
-		\begin{proof}
-			Integrating by part, we obtain
-			\begin{align*}
-			\int_{a}^{b} x f(x) f'(x)\,dx
-			&= \left. \frac{1}{2}x f^2(x) \right|_{a}^{b} - \frac{1}{2} \int_{a}^{b} f^2(x)\,dx \\
-			&=\frac{1}{2}\left( b f^2(b) - a f^2(a) \right) - \frac{1}{2}\cdot 1 \\
-			&= -\frac{1}{2}.
-			\end{align*}
-		\end{proof}
-		
-		\item Prove that $\int_{a}^{b}[f'(x)]^2\,dx\cdot \int_{a}^{b}x^2 f^2(x)\,dx > \frac{1}{4}$.
-		\begin{proof}
-			By Schwarz inequality, we know
-			$$
-			\left\{ \int_{a}^{b} [f'(x)]^2\,dx \right\}^{\frac{1}{2}} \left\{ \int_{a}^{b} x^2 f^2(x)\,dx \right\}^{\frac{1}{2}}
-			\geq \left| \int_{a}^{b} x f(x) f'(x)\,dx \right|
-			= \frac{1}{2}.
-			$$
-			Taking the square on both sides, we conclude
-			$$
-			\int_{a}^{b} [f'(x)]^2\,dx \cdot \int_{a}^{b} x^2 f^2(x)\,dx > \frac{1}{4}.
-			$$ 
-		\end{proof}
+		\item \textbf{Prove that $\int_{a}^{b}x f(x) f'(x)\,x = -\frac{1}{2}$.}
 	\end{itemize}
+	\begin{proof}
+		Integrating by part, we obtain
+		\begin{align*}
+		\int_{a}^{b} x f(x) f'(x)\,dx
+		&= \left. \frac{1}{2}x f^2(x) \right|_{a}^{b} - \frac{1}{2} \int_{a}^{b} f^2(x)\,dx \\
+		&=\frac{1}{2}\left( b f^2(b) - a f^2(a) \right) - \frac{1}{2}\cdot 1 \\
+		&= -\frac{1}{2}.
+		\end{align*}
+	\end{proof}
+	
+	\begin{itemize}
+		\item \textbf{Prove that $\int_{a}^{b}[f'(x)]^2\,dx\cdot \int_{a}^{b}x^2 f^2(x)\,dx > \frac{1}{4}$.} 
+	\end{itemize}
+	
+	\begin{proof}
+		By Schwarz inequality, we know
+		$$
+		\left\{ \int_{a}^{b} [f'(x)]^2\,dx \right\}^{\frac{1}{2}} \left\{ \int_{a}^{b} x^2 f^2(x)\,dx \right\}^{\frac{1}{2}}
+		\geq \left| \int_{a}^{b} x f(x) f'(x)\,dx \right|
+		= \frac{1}{2}.
+		$$
+		Taking the square on both sides, we conclude
+		$$
+		\int_{a}^{b} [f'(x)]^2\,dx \cdot \int_{a}^{b} x^2 f^2(x)\,dx > \frac{1}{4}.
+		$$ 
+	\end{proof}
 \end{Exercise}
