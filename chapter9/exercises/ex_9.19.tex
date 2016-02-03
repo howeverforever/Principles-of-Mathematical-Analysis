@@ -1,0 +1,47 @@
+% === Exercise 9.19 ===
+\begin{Exercise}
+	\begin{proof}
+		Put
+		\begin{align*}
+		f_1(x,y,z,u) &= 3x+y-z+u^2; \\
+		f_2(x,y,z,u) &= x-y+2x+u; \\
+		f_3(x,y,z,u) &= 2x+2y-3z+2u.
+		\end{align*}
+		Then $f_1 = f_2 = f_3 = 0$ implies that $f_1 - f_2 - f_3 = 0$.
+		Consequently, $3u - u^2 = 0$.
+		Hence when $u = 0$ or $u = 3$, the system has a solution.
+		That is, the system can not be solved generally for $x,y,z$ in terms of $u$.
+		
+		For the other three statements, we give examples as a proof.
+		\begin{itemize}
+			\item \textbf{The system can be solved for $x,y,u$ in terms of $z$.}
+		\end{itemize}
+		$$
+		(x,y,u) = \begin{cases}
+		\left( -\dfrac{z}{4}, \dfrac{7}{4}z, 0 \right) &, \mbox{(u = 0)}\\
+		\left( -\dfrac{z+9}{4}, \dfrac{7z+3}{4}, 3 \right) &, \mbox{(u = 3)}\\
+		\end{cases}
+		$$
+		
+		\begin{itemize}
+			\item \textbf{The system can be solved for $x,z,u$ in terms of $y$.}
+		\end{itemize}
+		$$
+		(x,z,u) = \begin{cases}
+		\left( -\dfrac{y}{7}, \dfrac{4}{7}y, 0 \right) &, \mbox{(u = 0)}\\
+		\left( \dfrac{4y+60}{7}, \dfrac{4y-3}{7}, 3 \right) &, \mbox{(u = 3)}\\
+		\end{cases}
+		$$
+		
+		\begin{itemize}
+			\item \textbf{The system can be solved for $y,z,u$ in terms of $x$.}
+		\end{itemize}
+		$$
+		(y,z,u) = \begin{cases}
+		\left( -7x, -4x, 0 \right) &, \mbox{(u = 0)}\\
+		\left( \dfrac{7}{4}x-15, -4x+9, 3 \right) &, \mbox{(u = 3)}\\
+		\end{cases}
+		$$
+	\end{proof}
+	
+\end{Exercise}

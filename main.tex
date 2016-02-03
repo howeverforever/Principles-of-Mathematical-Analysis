@@ -11,6 +11,7 @@
 \usepackage{pgf,tikz}
 \usepackage{mathrsfs}
 
+\usepackage[titletoc]{appendix}
 \usetikzlibrary{arrows}
 
 \usepackage[bookmarks=true]{hyperref}
@@ -23,6 +24,7 @@
 \usepackage{titletoc}
 \usepackage{import}
 \usepackage[yyyymmdd]{datetime}
+
 
 \usepackage{enumerate}
 \usepackage{type1cm}
@@ -45,6 +47,9 @@
 % === Preface ===
 \include{abstract}
 
+% === Notation Table ===
+\include{notation}
+
 % === Table ===
 \include{table}
 
@@ -57,6 +62,7 @@
 \subimport*{chapter5/}{chapter5}
 \subimport*{chapter6/}{chapter6}
 \subimport*{chapter7/}{chapter7}
+\subimport*{chapter8/}{chapter8}
 \subimport*{chapter9/}{chapter9}
 
 \end{document}

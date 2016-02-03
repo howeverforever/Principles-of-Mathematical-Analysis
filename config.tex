@@ -1,9 +1,9 @@
 % === Config ===
 \let\oldproofname=\proofname
-\renewcommand{\proofname}{\rm\bf{\oldproofname}}
+\renewcommand{\proofname}{\color{red}{\rm\bf{\oldproofname}}}
   
 \newenvironment{solution}
-  {\begin{proof}[$\mathbf{Solution}$]}
+  {\begin{proof}[\color{red}{$\mathbf{Solution}$}]}
   {\end{proof}}
   
 \newenvironment{sketch}
@@ -11,11 +11,11 @@
   {\end{proof}}
 
 \newenvironment{answer}
-  {\begin{proof}[$\mathbf{Answer}$]\renewcommand{\qedsymbol}{}}
+  {\begin{proof}[\color{purple}{$\mathbf{Answer}$}]\renewcommand{\qedsymbol}{}}
   {\end{proof}}
 
 \newtheorem{theorem}{Theorem}[chapter]
-\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{lemma}[theorem]{\color{blue}{Lemma}}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -32,3 +32,5 @@
     {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}
   \int}
 \def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\DeclareMathOperator{\ii}{\mathrm{i}}

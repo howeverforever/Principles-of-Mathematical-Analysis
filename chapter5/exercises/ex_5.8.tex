@@ -1,0 +1,47 @@
+% === Exercise 5.8 ===
+\begin{Exercise}
+	\begin{proof}
+		Since $f'$ is continuous on $[a,b]$ and $[a,b]$ is compact, then $f'$ is uniformly continuous on $[a,b]$.
+		Given $\epsilon>0$, there exists $\delta > 0$ such that
+		$$
+		|t-x|<\delta,\ x\in[a,b],\ t\in[a,b] \implies |f(t)-f(x)|<\epsilon.
+		$$
+		By the Mean Value Theorem, there exists $p$ is between $t$ and $x$ such that
+		$$
+		f(t)-f(x) = f'(p) (t-x).
+		$$
+		Moreover, we have $|x-p|<\delta$ and $x,p\in [a,b]$.
+		This implies $|f'(x) - f'(p)|<\epsilon$.
+		Hence we know
+		$$
+		\left| \frac{f(t)-f(x)}{t-x}-f'(x) \right| < \epsilon
+		$$
+		whenever $0<|t-x|<\delta,\ a\leq x \leq b,\ a\leq t\leq b$. 
+	\end{proof}
+	
+	\begin{itemize}
+		\item \textbf{Does this hold for vector-valued functions too?}
+	\end{itemize}
+	\begin{answer}
+		Yes.
+	\end{answer}
+	\begin{proof}
+		Let $f = (f_1, f_2, \cdots, f_k)$.
+		Since $f'$ is continuous on $[a,b]$, then $f_i$ is continuous on $[a,b]$.
+		Moreover, $[a,b]$ is compact, we know $f_i$ is uniformly continuous on $[a,b]$.
+		On the other hand, $f$ is differentiable on $[a,b]$, so is $f_i$ for each $i$.
+		
+		Given $\epsilon>0$ with $t,x\in [a,b]$, for each $i$, there exists $\delta_i >0$ such that
+		$$
+		|t-x|<\delta_i \implies \left| \frac{f(t)-f(x)}{t-x}-f'(x) \right| < \frac{\epsilon}{k}. 
+		$$
+		Put $\delta = \min_{1\leq i \leq k}\{\delta_i\}$. Then for $|x-t|<\delta$, we have
+		\begin{align*}
+		\left| \frac{f(t)-f(x)}{t-x}-f'(x) \right| 
+		&= \left| \frac{\big( f_1(t), f_2(t),\cdots, f_k(t)\big) - \big( f_1(x), f_2(x),\cdots, f_k(x)\big)}{t-x} - \big( f'_1(x), f'_2(x), \cdots, f'_k(x) \big)\right| \\
+		&\leq \left| \frac{f_1(t)-f_1(x)}{t-x}-f'_1(x) \right| + \left| \frac{f_2(t)-f_2(x)}{t-x}-f'_2(x) \right| + \cdots + \left| \frac{f_k(t)-f_k(x)}{t-x}-f'_k(x) \right| \\
+		&< \underbrace{ \frac{\epsilon}{k} + \frac{\epsilon}{k} + \cdots +  \frac{\epsilon}{k}  }_k \\
+		&= \epsilon
+		\end{align*}
+	\end{proof}
+\end{Exercise}

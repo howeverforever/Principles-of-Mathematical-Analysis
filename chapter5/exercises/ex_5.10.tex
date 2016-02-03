@@ -1,0 +1,22 @@
+% === Exercise 5.10 ===
+\begin{Exercise}
+	\begin{proof}
+		Let $f_1$ and $f_2$ be the real and imaginary parts of $f$.
+		Let $g_1$ and $g_2$ be the real and imaginary parts of $g$.
+		Notice that $f_1$, $f_2$, $g_1$, $g_2$ are real functions.
+		
+		By Remarks 5.16, we know $f'(x) = f'_1(x) + \ii f'_2(x)$ and $g'(x) = g'_1(x) + \ii g'_2(x)$.
+		Follow the hint, then we obtain
+		\begin{align*}
+		\lim_{x\to 0}\frac{f(x)}{g(x)}
+		&= \lim_{x\to 0}\left[ \left( \frac{f(x)}{x}-A\right)\cdot\frac{x}{g(x)} + A \cdot \frac{x}{g(x)}\right] \\
+		&= \lim_{x\to 0}\left[ \left( \frac{f_1(x)+\ii f_2(x)}{x}-A\right)\cdot\frac{x}{g_1(x)+\ii g_2(x)} + A \cdot \frac{x}{g_1(x)+\ii g_2(x)}\right] \\
+		&= \lim_{x\to 0}\left[ \left( \frac{f'_1(x)+\ii f'_2(x)}{1}-A\right)\cdot\frac{1}{g'_1(x)+\ii g'_2(x)} + A \cdot \frac{1}{g'_1(x)+\ii g'_2(x)}\right] \mbox{
+			($\because$~~\textit{L'Hospital's Rule})}\\
+		&= \lim_{x\to 0}\left[ \left( \frac{f'(x)}{1}-A\right)\cdot\frac{1}{g'(x)} + A \cdot \frac{1}{g'(x)}\right] \\
+		&= (A-A) \cdot \frac{1}{B} + A \cdot \frac{1}{B} \\
+		&= \frac{A}{B}.
+		\end{align*}
+		Hence we get the desired result.
+	\end{proof}
+\end{Exercise}

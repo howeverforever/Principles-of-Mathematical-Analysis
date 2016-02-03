@@ -1,0 +1,54 @@
+% === Exercise 7.6 ===
+\begin{Exercise}
+	\begin{itemize}
+		\item \textbf{The series converges uniformly in every bounded interval.}
+	\end{itemize}
+	\begin{proof}
+		Given a bounded interval $[a,b]$.
+		Define
+		$$
+		f_m = \sum_{n=1}^{m}(-1)^n \frac{x^2+n}{n^2}.
+		$$
+		Put $M = \max\{|a|, |b|\}$.
+		Since both $\sum_{n=1}^{\infty}\frac{(-1)^n}{n}$ and $\sum_{n=1}^{\infty} \frac{(-1)^n}{n^2}$ converge, then given $\epsilon > 0$, there exist $N_1,N_2$ such that
+		\begin{align*}
+		p>q\geq N_1 &\implies \left| \sum_{n=q}^{p}\frac{(-1)^n}{n}\right| < \frac{\epsilon}{2}; \\
+		p>q\geq N_2 &\implies \left| \sum_{n=q}^{p}\frac{(-1)^n}{n^2}\right| < \frac{\epsilon}{2 M^2}.
+		\end{align*}
+		Pick $N = \max\{N_1, N_2\}$.
+		For $p > q \geq N$, we observe
+		\begin{align*}
+		\left| f_p(x) - f_q(x) \right|
+		&= \left| \sum_{n=q}^{p}\frac{(-1)^n}{n} + x^2 \sum_{n=q}^{p}\frac{(-1)^n}{n^2} \right| \\
+		&\leq \left| \sum_{n=q}^{p}\frac{(-1)^n}{n} \right| + x^2 \left| \sum_{n=q}^{p}\frac{(-1)^n}{n^2} \right| \\
+		&< \frac{\epsilon}{2} + x^2 \frac{\epsilon}{2 M^2} \\
+		&\leq \frac{\epsilon}{2} + \frac{\epsilon}{2} \\
+		&= \epsilon.
+		\end{align*}
+		By Cauchy criterion, we conclude
+		$$
+		\sum_{n=1}^{\infty}(-1)^n \frac{x^2+n}{n^2}
+		$$
+		uniformly converges on $[a,b]$.
+		
+		Since $[a,b]$ was arbitrary, then the series uniformly converges in every bounded interval.
+	\end{proof}
+	
+	\begin{itemize}
+		\item \textbf{The series does not converge absolutely for any value of $x$.}
+	\end{itemize}
+	\begin{proof}
+		For any value of $x$, we consider
+		$$
+		\sum_{n=1}^{\infty} \left| (-1)^n \frac{x^2+n}{n^2} \right|
+		= \sum_{n=1}^{\infty} \left| \frac{x^2+n}{n^2} \right|
+		= \sum_{n=1}^{\infty} \left| \frac{x^2}{n^2} + \frac{1}{n} \right|
+		\geq \sum_{n=1}^{\infty} \left| \frac{1}{n} \right|.
+		$$
+		Since $\sum_{n=1}^{\infty} \left| \frac{1}{n} \right|$ diverges by the p-Series Test, then by the Comparison Test, we know
+		$$
+		\sum_{n=1}^{\infty} \left| (-1)^n \frac{x^2+n}{n^2} \right|
+		$$
+		diverges.
+	\end{proof}
+\end{Exercise}
