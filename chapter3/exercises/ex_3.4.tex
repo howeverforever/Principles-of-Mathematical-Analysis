@@ -1,0 +1,24 @@
+% === Exercise 3.4 ===
+\begin{Exercise}
+	\begin{proof}
+		From definition, we know $s_1 = s_2 = 0$ and $s_{2m+2} = \frac{s_{2m+1}}{2} = \frac{1}{4} + \frac{1}{2}s_{2m}$. Then,
+		$$
+		\lim_{m\to\infty} s_{2m}
+		= \frac{1}{4} + \frac{1}{8} + \cdots
+		= \sum_{n=1}^{\infty} \frac{1}{2^{n+1}}
+		= \frac{\frac{1}{4}}{1 - \frac{1}{2}}
+		= \frac{1}{2}.
+		$$
+		And,
+		$$
+		\lim_{m\to\infty} s_{2m+1}
+		= \frac{1}{2} + \frac{1}{4} + \cdots
+		= \sum_{n=1}^{\infty} \frac{1}{2^n}
+		= \frac{\frac{1}{2}}{1 - \frac{1}{2}}
+		= 1.
+		$$
+		As $n$ increase, $s_n$ is close to either $\frac{1}{2}$ or $1$.
+		
+		We conclude $\liminf_{n\to\infty} s_n = \frac{1}{2}$ and $\limsup_{n\to\infty} s_n = 1$.
+	\end{proof}
+\end{Exercise}
