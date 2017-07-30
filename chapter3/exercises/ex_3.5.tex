@@ -1,0 +1,31 @@
+% === Exercise 3.5 ===
+\begin{Exercise}
+	\begin{proof}
+		Let $a^*=\limsup_{n\to\infty} a_n$, $b^*=\limsup_{n\to\infty} b_n$ and $s^*=\limsup_{n\to\infty} (a_n + b_n)$.
+		
+		\begin{itemize}
+			\item \textbf{$a^*$ and $b^*$ are finite.}
+			
+			By theorem 3.17(a), we know there exists subsequences $\{a_{n_k}\}, \{b_{n_k}\}$ such that
+			$$
+			\lim_{k\to\infty} (a_{n_k} + b_{n_k})
+			= \lim_{k\to\infty} a_{n_k} + \lim_{k\to\infty} b_{n_k}
+			= s^*.
+			$$
+			Since $\lim_{k\to\infty} a_{n_k} \leq a^*$ and $\lim_{k\to\infty} b_{n_k} \leq b^*$, then $s^* \leq a^* + b^*$.
+			It follows that
+			$$
+			\limsup_{n\to\infty} (a_n + b_n)
+			\leq \limsup_{n\to\infty} a_n + \limsup_{n\to\infty} b_n
+			$$.
+			
+			\item \textbf{$a^*=\infty$ and $b^*=\infty$.}
+			
+			$\infty \leq \infty + \infty$ holds trivially.
+			
+			\item \textbf{$a^*=-\infty$ and $b^*=-\infty$.}
+			
+			$-\infty \leq -\infty + -\infty$ holds trivially.
+		\end{itemize}
+	\end{proof}
+\end{Exercise}

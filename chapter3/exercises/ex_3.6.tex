@@ -1,0 +1,40 @@
+% === Exercise 3.6 ===
+\begin{Exercise}
+	\begin{enumerate}[a)]
+		\item
+		\begin{answer}
+			$\sum a_n$ diverges.
+		\end{answer}
+		\begin{solution}
+			We know
+			$$
+			\sum_{n=1}^{m} a_n
+			= (\sqrt{2} - 1) + (\sqrt{3} - \sqrt{2}) + \cdots + (\sqrt{m+1} - \sqrt{m})
+			= \sqrt{m+1} - 1.
+			$$
+			Hence
+			$$
+			\sum_{n=1}^{\infty} a_n
+			= \lim_{m\to\infty} \sum_{n=1}^{m} a_n
+			= \infty.
+			$$
+		\end{solution}
+	
+		\item
+		\begin{answer}
+			$\sum a_n$ converges.
+		\end{answer}
+		\begin{solution}
+			We know
+			$$
+			a_n
+			= \frac{\sqrt{n+1} - \sqrt{n}}{n}
+			= \frac{\sqrt{n+1} - \sqrt{n}}{n} \cdot \frac{\sqrt{n+1}+\sqrt{n}}{\sqrt{n+1}+\sqrt{n}}
+			= \frac{1}{\sqrt{n^3+n^2} + \sqrt{n^3}}
+			\leq \frac{1}{2} \cdot \frac{1}{n^{\frac{3}{2}}}.
+			$$
+			By the p-Series Test (Theorem 3.28), we derive $\sum_{n=1}^{\infty} \sqrt{1}{n^{\frac{3}{2}}}$ converges.
+			Moreover, by the Comparison Test (Theorem 3.25), we conclude $\sum a_n$ converges.
+		\end{solution}
+	\end{enumerate}
+\end{Exercise}
